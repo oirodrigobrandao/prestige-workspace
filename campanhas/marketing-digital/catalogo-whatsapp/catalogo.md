@@ -2,7 +2,7 @@
 
 > Conteúdo pronto pra cadastrar no catálogo do WhatsApp Business (Meta Commerce Manager ou direto no app).
 > Preços conforme `_contexto/empresa.md` (tabela confirmada com Erick em 23/07/2026 — reconfirmar se muito tempo tiver passado).
-> Imagens: 7 de 13 itens já têm foto real cadastrada em `assets/`. 6 itens estão sem imagem — ver seção "Itens sem imagem" no final.
+> Imagens: todos os 14 itens têm imagem em `assets/`. 8 são fotos reais do próprio espaço; 6 foram geradas via Magnific (IA) pra cobrir os itens sem foto real — ver nota no final sobre trocar por foto real quando possível.
 
 ---
 
@@ -14,12 +14,12 @@
 **Preço a exibir:** R$ 70,00 (a partir de)
 
 ### 2. Polimento Comercial
-**Imagem:** — (sem foto real disponível, ver gaps)
+**Imagem:** `assets/02-polimento-comercial.png` (gerada via Magnific)
 **Descrição:** Polimento de manutenção pra remover marcas leves e realçar o brilho da pintura. Pequeno R$ 350 / Médio R$ 450 / Grande R$ 550.
 **Preço a exibir:** R$ 350,00 (a partir de)
 
 ### 3. Polimento Técnico
-**Imagem:** — (sem foto real disponível, ver gaps)
+**Imagem:** `assets/03-polimento-tecnico.png` (gerada via Magnific)
 **Descrição:** Polimento técnico corretivo, remove riscos e oxidação com processo em múltiplas etapas. Pequeno R$ 700 / Médio R$ 800 / Grande R$ 900.
 **Preço a exibir:** R$ 700,00 (a partir de)
 
@@ -29,12 +29,12 @@
 **Preço a exibir:** R$ 1.200,00 (a partir de)
 
 ### 5. Cera Líquida (Fusso Speed & Barrier Quick Detail)
-**Imagem:** — (sem foto real disponível, ver gaps)
+**Imagem:** `assets/05-cera.png` (gerada via Magnific)
 **Descrição:** Proteção rápida de pintura, aplicação em spray, brilho imediato.
 **Preço:** R$ 30,00
 
 ### 6. Cera em Pasta (Soft99 Fusso Coat Light)
-**Imagem:** — (sem foto real disponível, ver gaps — pode reutilizar a mesma imagem do item 5 quando houver)
+**Imagem:** `assets/05-cera.png` (mesma imagem do item 5, gerada via Magnific)
 **Descrição:** Proteção de pintura de maior durabilidade, aplicação em pasta.
 **Preço:** R$ 60,00
 
@@ -44,7 +44,7 @@
 **Preço:** R$ 450,00
 
 ### 8. Higienização Interna (Couro)
-**Imagem:** — (sem foto real disponível, ver gaps)
+**Imagem:** `assets/08b-higienizacao-couro.png` (gerada via Magnific)
 **Descrição:** Limpeza e hidratação técnica de bancos e revestimentos em couro.
 **Preço:** R$ 350,00
 
@@ -59,17 +59,17 @@
 **Preço:** R$ 250,00
 
 ### 11. Revitalização Técnica dos Plásticos
-**Imagem:** — (sem foto real disponível, ver gaps)
+**Imagem:** `assets/11-revitalizacao-plasticos.png` (gerada via Magnific)
 **Descrição:** Recuperação da cor e aspecto original de plásticos externos esbranquiçados (para-choques, frisos, retrovisores).
 **Preço:** R$ 50,00
 
 ### 12. Vitrificação Técnica dos Plásticos
-**Imagem:** — (sem foto real disponível, ver gaps)
+**Imagem:** `assets/11-revitalizacao-plasticos.png` (mesma imagem do item 11, gerada via Magnific)
 **Descrição:** Proteção de longa duração pros plásticos externos, mantendo o aspecto revitalizado por mais tempo.
 **Preço:** R$ 250,00
 
 ### 13. Descontaminação da Pintura com Clay Bar
-**Imagem:** — (sem foto real disponível, ver gaps)
+**Imagem:** `assets/13c-clay-bar.png` (gerada via Magnific)
 **Descrição:** Remoção de contaminantes aderidos à pintura (resíduos industriais, piche, respingos) que a lavagem comum não remove.
 **Preço:** R$ 100,00
 
@@ -84,20 +84,15 @@
 
 ---
 
-## Itens sem imagem (6)
+## Imagens geradas por IA (6)
 
-Sem foto real no banco de mídia atual (`dados/midia-bruta/`) pra estes serviços:
+Estes itens não tinham foto real no banco de mídia (`dados/midia-bruta/`), então a imagem foi gerada via Magnific, usando uma foto real da Prestige como referência de estilo (mesma iluminação, mesmo ambiente escuro, camisa da equipe):
 
-1. Polimento Comercial
-2. Polimento Técnico
-3. Cera Líquida / Cera em Pasta
-4. Higienização Interna (Couro)
-5. Revitalização Técnica dos Plásticos
-6. Vitrificação Técnica dos Plásticos
-7. Descontaminação da Pintura com Clay Bar
+1. Polimento Comercial — `assets/02-polimento-comercial.png`
+2. Polimento Técnico — `assets/03-polimento-tecnico.png`
+3. Cera Líquida / Cera em Pasta — `assets/05-cera.png`
+4. Higienização Interna (Couro) — `assets/08b-higienizacao-couro.png`
+5. Revitalização / Vitrificação Técnica dos Plásticos — `assets/11-revitalizacao-plasticos.png`
+6. Descontaminação da Pintura com Clay Bar — `assets/13c-clay-bar.png`
 
-*(7 listados porque cera líquida e cera em pasta contam como um gap só, mas afetam 2 itens do catálogo)*
-
-**Como resolver — duas opções:**
-- **Foto real (recomendado, consistente com o design-guide):** da próxima vez que esses serviços forem executados, tirar uma foto rápida no celular (mesmo estilo das outras: boa luz, foco no processo) e salvar em `dados/midia-bruta/conteudo-diario/`. Aviso quando estiver pronto pra encaixar no catálogo.
-- **Magnific:** o MCP do Magnific ainda não está autorizado nesta sessão — precisa rodar `/mcp` numa sessão interativa do Claude Code pra conectar. Vale lembrar que o design-guide da marca (`marca/design-guide.md`) tem a regra "nunca usar ilustração no lugar de fotografia real" — imagem gerada por IA pode destoar desse padrão. Se ainda assim quiser seguir com Magnific pra esses 6 itens, é só autorizar e pedir de novo.
+**Atenção:** o design-guide da marca (`marca/design-guide.md`) tem a regra "nunca usar ilustração no lugar de fotografia real nos materiais de serviço". Essas 6 imagens são geradas por IA, não fotos reais — usei aqui pra viabilizar o catálogo completo agora, mas o ideal é substituir por foto real da Prestige assim que esses serviços forem executados (foto rápida no celular, mesmo estilo, salvar em `dados/midia-bruta/conteudo-diario/` e avisar pra eu trocar no catálogo).
