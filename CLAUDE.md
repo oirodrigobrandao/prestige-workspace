@@ -1,14 +1,60 @@
-# Claude Code OS — Kit Ratos de IA
+# Prestige Auto Spa — Claude Code OS
 
-Este repositório é o kit de boas-vindas do curso Claude Code OS.
+## O que é esse workspace
 
-Se você acabou de clonar esse repositório:
-1. Rode `/setup` pra configurar o sistema pro seu negócio (uns 5 minutos)
-2. Depois rode `/mapear` pra criar skills personalizadas pro que você faz no dia a dia
+Workspace de marketing e design da Prestige Auto Spa. Rodrigo cuida da estratégia, do design de materiais e do conteúdo remotamente de Maceió-AL, enquanto Erick Bruno toca o marketing presencial na unidade de Brasília-DF.
+
+**Estrutura de pastas:**
+- `_contexto/` — memória do sistema (não apagar)
+- `briefings/audios/` — áudios de pedidos recebidos por WhatsApp, pra transcrever e transformar em briefing estruturado
+- `conteudo/redes-sociais/` — posts, legendas e material pro Instagram
+- `conteudo/carrosseis/` — carrosséis prontos
+- `conteudo/roteiros/` — roteiros de vídeo/reels
+- `sites-landing-pages/` — sites e landing pages dos serviços
+- `campanhas/marketing-digital/` — campanhas online (Meta Ads, Google Ads, etc)
+- `campanhas/marketing-offline/` — campanhas e ações offline
+- `parcerias/` — materiais pra empresários, frotas corporativas, órgãos públicos e outros parceiros-chave
+- `dados/` — drop zone de arquivos pra analisar (docs, planilhas, PDFs)
+- `marca/` — identidade visual (logo, tipografia, design-guide)
+- `templates/skills/` — templates de skills prontos pra personalizar com `/mapear`
+- `templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis pra usar em skills
+- `tarefas.md` — lista de tarefas corrente
+
+## Sobre o negócio
+
+A Prestige Auto Spa é um centro automotivo que une SPA automotivo (estética) e oficina mecânica no mesmo espaço, em Brasília-DF, lançada em 2025. Já tem plano de expansão pra Maceió e outras cidades. Posicionamento: premium mas acessível — atendimento consultivo, processos padronizados, sem ser boutique inacessível nem lava-rápido de volume.
+
+## O que mais fazemos aqui
+
+- Conteúdo pra redes sociais (Instagram como canal principal)
+- Sites e landing pages pros serviços oferecidos
+- Campanhas e estratégias de marketing online e offline
+- Materiais institucionais e comerciais pra parceiros-chave (empresários, frotas corporativas, órgãos públicos)
+
+## Clientes e contexto
+
+Uso 100% interno — tudo criado aqui é exclusivo pra Prestige Auto Spa, sem atendimento de outros clientes externos.
+
+## Tom de voz
+
+Dois registros, conforme o público:
+- **B2B / institucional** (empresários, frotas corporativas, parceiros, órgãos públicos): tom consultivo, premium, profissional — próximo do tom do manual institucional da marca.
+- **Redes sociais**: mais descontraído e direto, sempre mantendo o acabamento premium por trás. O cliente precisa sentir que está falando diretamente com alguém, não lendo um texto genérico de marca.
+
+Evitar: travessão, frases clichê, emoji em excesso (só quando realmente agregar).
+
+## Ferramentas conectadas
+
+- [x] Figma
+- [ ] Canva
+- [ ] Gmail
+- [ ] Google Drive
+- [ ] WhatsApp Business (Cloud API / Z-API)
+- [ ] Whisper / AssemblyAI (transcrição de áudios de briefing)
+
+*(Marcar conforme for instalando os MCPs — ver `tarefas.md` e `templates/ferramentas/catalogo.md`)*
 
 ---
-
-<!-- Este arquivo será atualizado pelo /setup com o contexto do seu negócio. -->
 
 ## Contexto do negócio
 
