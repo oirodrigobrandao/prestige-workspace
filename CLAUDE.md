@@ -46,6 +46,7 @@ Evitar: travessão, frases clichê, emoji em excesso (só quando realmente agreg
 ## Ferramentas conectadas
 
 - [x] Figma
+- [x] Magnific (pode exigir autorização no primeiro uso)
 - [ ] Canva
 - [ ] Gmail
 - [ ] Google Drive

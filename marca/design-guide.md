@@ -9,7 +9,7 @@
 
 - **Fundo principal:** branco (#FFFFFF)
 
-- **Cor de destaque / CTA:** dourado/mostarda — aprox. `#C79A44` (confirmar hex exato no arquivo original de marca, se houver)
+- **Cor de destaque / CTA:** dourado — `#CC9933` (extraído direto do arquivo do logo, `marca/PNG/Prestige Auto Spa-07.png`)
 
 - **Texto principal:** preto (#000000)
 
@@ -31,16 +31,32 @@
 
 ## Estilo geral
 
-Moderno, angular e premium — estética automotiva/tech. Letras com cortes retos e diagonais (visível no wordmark "PRESTIGE"). Visual limpo, sem poluição, alto contraste entre preto e dourado.
+Moderno, angular e premium — estética automotiva/tech. Fundo predominantemente preto, com fotografia real de carros e dos serviços sendo executados (nunca ilustração) — muitas vezes com iluminação dramática/alto contraste. Visual limpo, direto, sem poluição visual.
+
+> Baseado nos 7 materiais (banners, adesivos, posts) que o Erick já produziu e passou como referência em 23/07/2026 — é o mais próximo de um padrão que a marca tem hoje, mas **ainda não foi oficializado com o Erick**. Tratar como ponto de partida pra propor o padrão do item "Arte padrão de preços/serviços" em `tarefas.md`, não como regra fechada.
 
 ---
 
 ## Elementos-chave
 
-- Bordas: retas, sem arredondamento excessivo — reforça o caráter técnico/angular da marca
-- Border-radius dos cards: mínimo ou zero, seguindo o estilo anguloso do logo
-- Botões: preferencialmente em dourado sólido com texto preto ou branco, cantos retos
-- Sombras: evitar sombras pesadas — manter visual clean
+- **Chanfro (corte diagonal no canto):** o elemento mais recorrente da marca. Caixas de texto, listas de serviço, tarjas de preço, botões de contato e QR code sempre têm um canto (geralmente superior-direito ou inferior-direito) cortado na diagonal, formando um paralelogramo/seta em vez de retângulo puro. Esse recorte é o que "amarra" qualquer peça ao visual da marca — usar sempre que possível em blocos de destaque
+- Bordas: retas, sem arredondamento — reforça o caráter técnico/angular da marca e do logo
+- Border-radius dos cards: zero
+- Botões / tarjas de contato: bloco branco ou dourado sólido com o chanfro, texto em preto bold (número de telefone sempre em destaque)
+- Listas de serviço: caixas com borda fina dourada (outline, fundo preto) e o mesmo corte diagonal, uma abaixo da outra
+- Selo/badge de serviço: emblema circular (coroa + grinalda/laurel, estilo brasão) usado pra marcar categorias/tiers de serviço (ex: "Prestige Wash Essencial") — dourado e branco sobre fundo escuro
+- QR code: sempre em bloco branco, chanfrado, geralmente ao lado do contato — usado pra direcionar pro Instagram ou agendamento
+- Sombras: evitar sombras pesadas — manter visual clean, contraste vem da cor e da foto, não de efeito
+
+---
+
+## Layouts recorrentes
+
+- **Banner horizontal (loja/parceiro):** foto do serviço à esquerda, lista de serviços chanfrada ao centro, bloco de contato (telefone + horário) chanfrado à direita
+- **Post/story de oferta:** foto do carro em destaque, preço grande em tarja dourada chanfrada, QR code, endereço no rodapé
+- **Flyer vertical (impresso):** foto no topo (metade da peça), lista de serviços chanfrada + QR code na parte inferior preta
+- **Adesivo/etiqueta de controle** (ex: troca de óleo): fundo claro (branco/creme), faixa dourada de destaque, campos pra preencher à mão, contato no rodapé
+- **Post Instagram (institucional/marco):** foto dramática do carro, texto de destaque em branco + número grande em dourado com efeito de textura, sem lista de serviços — usado pra marcos da marca (ex: 1.000 seguidores)
 
 ---
 
@@ -49,6 +65,8 @@ Moderno, angular e premium — estética automotiva/tech. Letras com cortes reto
 - Não distorcer o wordmark "PRESTIGE" nem separar do bloco "AUTO SPA" sem necessidade
 - Não usar paleta de cores fora de preto/branco/dourado em materiais oficiais
 - Não usar fontes arredondadas ou "amigáveis demais" que destoem do estilo angular da marca
+- Não usar ilustração no lugar de fotografia real nos materiais de serviço/promoção
+- Não usar caixas/botões com cantos 100% retos sem o chanfro em peças de destaque — foge do padrão observado
 
 ---
 
@@ -75,4 +93,6 @@ Moderno, angular e premium — estética automotiva/tech. Letras com cortes reto
 
 ## Observações adicionais
 
-Fotos da inauguração da unidade em Brasília disponíveis na pasta `dados/` (aguardando organização em pasta de mídia dedicada).
+Fotos e vídeos brutos disponíveis em `dados/midia-bruta/` (`inauguracao/`, `conteudo-diario/`, `diversos/`) — pasta local, fora do GitHub por ser muito pesada (~1,5GB). Ao usar uma peça específica, processar pontualmente (still, corte, etc.) e salvar o resultado fora dessa pasta.
+
+Os 7 materiais de referência usados pra descrever o padrão acima (banners, adesivos, posts) foram compartilhados só no chat — ainda não estão salvos em arquivo. Recomendo salvar em `marca/referencias/` pra servirem de exemplo real quando uma skill for gerar uma peça nova.

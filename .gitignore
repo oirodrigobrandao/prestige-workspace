@@ -18,6 +18,9 @@ dados/*.pdf
 dados/*.json
 !dados/README.md
 
+# Mídia bruta (fotos/vídeos) — sempre fora do GitHub, fica só local
+dados/midia-bruta/
+
 # Pastas de trabalho do usuário (geradas pelo /setup, conteúdo pessoal)
 clientes/
 propostas/
