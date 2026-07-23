@@ -55,6 +55,10 @@ Evitar: travessão, frases clichê, emoji em excesso (só quando realmente agreg
 
 *(Marcar conforme for instalando os MCPs — ver `tarefas.md` e `templates/ferramentas/catalogo.md`)*
 
+### Gerar imagens com Magnific
+
+Vale pra qualquer material da Prestige (catálogo, post, carrossel, campanha, proposta, etc.), não só um tipo específico de trabalho. Sempre que for gerar uma imagem no Magnific, levar como referência (`references`, `type: image`) pelo menos uma foto real do ambiente/equipe/carro da Prestige — de preferência uma que mostre a marca e as cores da marca (dourado/preto/branco) visíveis na cena. Isso mantém a imagem gerada consistente com o resto do material real e evita que pareça "IA genérica".
+
 ---
 
 ## Contexto do negócio
