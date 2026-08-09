@@ -73,6 +73,8 @@ Usar essas informações como base pra qualquer resposta ou decisão. Ao sugerir
 
 Para qualquer tarefa visual (carrossel, proposta, slide, landing page), consultar `marca/design-guide.md` como referência de estilo.
 
+Pra posts e criativos de redes sociais especificamente, consultar também `marca/referencias/bmw-m-conceito.md` como inspiração conceitual (composição fotográfica full-bleed, contraste de peso tipográfico, ritmo de espaçamento, hierarquia editorial "menos chrome, mais imagem"). Usar só os conceitos — cores e tipografia da Prestige continuam vindo exclusivamente de `marca/design-guide.md`, nunca dessa referência.
+
 Não é necessário listar o que foi lido nem confirmar a leitura. Apenas usar o contexto naturalmente.
 
 ---
