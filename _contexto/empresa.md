@@ -5,8 +5,8 @@
 **O que faz:** Centro automotivo que une SPA automotivo (estética) e oficina mecânica no mesmo espaço. Lançada em 2025 em Brasília-DF, com plano de expansão pra Maceió e outras cidades.
 **Perfil:** empresa (marketing/design interno, remoto)
 **Atende clientes:** uso interno — tudo criado nessa pasta é exclusivo pra Prestige Auto Spa
-**Equipe:** Rodrigo cuida da estratégia e design remotamente, de Maceió-AL. Erick Bruno toca o marketing presencial na unidade de Brasília-DF.
-**Ferramentas:** Figma, Canva, Photoshop, Illustrator, WhatsApp, Gmail, Google Drive
+**Equipe:** Rodrigo cuida da estratégia e design remotamente, de Maceió-AL. Erick Bruno toca o marketing presencial na unidade de Brasília-DF (sócio, viaja entre Brasília e Maceió). Levi Moura cuida do tráfego pago (Meta/Google/Instagram) e está estruturando automação de WhatsApp/CRM. Hanny Caroline faz atendimento/recepção e monitora a chegada e resposta aos leads de tráfego pago. Fernando é mecânico da oficina e é hoje a principal fonte de indicação/boca a boca que movimenta a oficina.
+**Ferramentas:** Figma, Canva, Photoshop, Illustrator, WhatsApp, Gmail, Google Drive, Sellflux (CRM/automação de WhatsApp, em implantação), ChatGPT (agente de IA em construção pelo Levi pra atendimento/vendas)
 **Principais entregas:** conteúdo pra redes sociais, sites e landing pages, campanhas e estratégias de marketing online e offline, materiais institucionais/comerciais pra parceiros
 
 ## Contexto adicional
@@ -51,3 +51,20 @@
 *Valores de Higienização Interna confirmados pelo Rodrigo em 23/07/2026. Atenção: o PDF `dados/midia-bruta/conteudo-diario/tabela_servicos_prestige.pdf` tem esses dois valores invertidos (erro conhecido no material) — usar sempre os valores daqui, não os do PDF.*
 
 *Preços válidos pra unidade de Brasília-DF — confirmar com Erick antes de reutilizar em campanhas, caso o tempo tenha passado.*
+
+## Economia do negócio — SPA x Oficina
+
+*(Repassado pelo Erick via WhatsApp em 08-09/08/2026, conversa entre sócios — usar como base pra priorizar esforço de marketing e comunicação.)*
+
+- **Faturamento:** proporção histórica é ~30% do faturamento vindo do SPA e ~70% da oficina.
+- **Margem é o oposto da proporção de faturamento:** a oficina fatura muito mais mas tem margem líquida baixa (~20-25%) — exemplo dado: oficina faturando R$250k/mês deixa uns R$50k líquidos. Já a estética tem margem líquida muito mais alta (~80%) — exemplo dado: estética faturando R$50k/mês deixa uns R$40k líquidos.
+- **Exemplo de margem por serviço (oficina):** jogo de suspensão comprado por R$1.200 e vendido por R$1.599 — lucro de ~R$300 depois de taxa de cartão. Faturamento alto, lucro baixo.
+- **Exemplo de margem por serviço (estética):** polimento + vitrificação cobrado a R$1.400, custo de ~R$400 (R$300 material + R$100 comissão), lucro de ~R$1.000.
+- **Implicação pra comunicação:** a oficina é o motor de faturamento/volume (hoje sustentada majoritariamente por indicação boca a boca do Fernando, sem tráfego pago dedicado até 08/2026), a estética é o motor de lucratividade. Vale considerar dar mais peso de mídia paga e conteúdo pra estética do que a proporção histórica de faturamento sugeriria, já que cada real investido ali converte em bem mais lucro líquido.
+
+## Marketing e tráfego pago
+
+- Tráfego pago começou em agosto/2026 com orçamento de R$100/dia, com meta de crescer pra uma média de R$350-500/dia conforme os resultados aparecerem.
+- Campanhas rodadas pelo Levi Moura: "Reconhecimento" (alcance, custo baixíssimo, menos de R$2 a cada mil pessoas) e engajamento pro Instagram (~R$0,10 por visita). Campanha de WhatsApp foi testada e pausada — precisa de alguém disponível pra atender na hora ou IA de apoio, sempre com humano acompanhando.
+- **Resposta imediata ao lead é tratada como prioridade máxima** pelo Erick — é o que decide se o clique em tráfego pago vira agendamento ou não.
+- Cadastro de cliente (CRM/Sellflux) em padronização: Nome + Sobrenome + Modelo do carro + 4 últimos dígitos da placa (evita duplicidade tipo "João - Gol Branco" e não expõe a placa completa).

@@ -27,6 +27,8 @@
 
 - **Peso do título:** Bold ou SemiBold
 
+- **Regra de diagramação e quebra de linhas (Anti-viúvas):** Nunca permitir uma palavra isolada sozinha em uma linha nos títulos, subtítulos ou chamadas de destaque. Distribuir as palavras de forma equilibrada e organizada através de quebras manuais semânticas (`<br>`), agrupando termos lógicos (ex: 2 a 4 palavras por linha com comprimentos harmônicos). Usar `text-wrap: balance` e espaçamentos não-quebráveis (`&nbsp;`) sempre que apropriado.
+
 ---
 
 ## Estilo geral
@@ -66,6 +68,7 @@ Moderno, angular e premium — estética automotiva/tech. Fundo predominantement
 - Não usar paleta de cores fora de preto/branco/dourado em materiais oficiais
 - Não usar fontes arredondadas ou "amigáveis demais" que destoem do estilo angular da marca
 - Não usar ilustração no lugar de fotografia real nos materiais de serviço/promoção
+- Não exibir logos, nomes ou uniformes de marcas terceiras/concorrentes em fotos ou criativos gerados (usar vestimentas limpas/lisas ou a marcação Prestige)
 - Não usar caixas/botões com cantos 100% retos sem o chanfro em peças de destaque — foge do padrão observado
 
 ---

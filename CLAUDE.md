@@ -14,6 +14,7 @@ Workspace de marketing e design da Prestige Auto Spa. Rodrigo cuida da estratég
 - `campanhas/marketing-digital/` — campanhas online (Meta Ads, Google Ads, etc)
 - `campanhas/marketing-offline/` — campanhas e ações offline
 - `parcerias/` — materiais pra empresários, frotas corporativas, órgãos públicos e outros parceiros-chave
+- `ideias/` — projetos estratégicos, novos modelos e iniciativas de inovação/impacto social
 - `dados/` — drop zone de arquivos pra analisar (docs, planilhas, PDFs)
 - `marca/` — identidade visual (logo, tipografia, design-guide)
 - `templates/skills/` — templates de skills prontos pra personalizar com `/mapear`
