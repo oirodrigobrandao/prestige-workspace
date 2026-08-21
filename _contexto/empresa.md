@@ -23,32 +23,39 @@
 
 ## Tabela de preços — SPA Automotivo
 
-*(Repassada pelo Erick via WhatsApp em 22/07/2026 — usar como referência pra artes, posts e materiais de preço)*
+*(Repassada pelo Erick via WhatsApp em 21/08/2026 — substitui a tabela anterior de 22/07/2026. Usar como referência pra artes, posts e materiais de preço)*
 
 **Prestige Wash**
-- Pequeno: R$ 70,00
-- Médio: R$ 90,00
-- Grande: R$ 110,00
+- P: R$ 70,00
+- M: R$ 90,00
+- G: R$ 110,00
+- GG: R$ 130,00
 
 **Serviços Especiais**
-- Polimento Comercial — Pequeno: R$ 350,00 / Médio: R$ 450,00 / Grande: R$ 550,00
-- Polimento Técnico — Pequeno: R$ 700,00 / Médio: R$ 800,00 / Grande: R$ 900,00
-- Vitrificação — Pequeno: R$ 1.200,00 / Médio: R$ 1.300,00 / Grande: R$ 1.400,00
+- Polimento Técnico — P: R$ 837,00 / M: R$ 962,50 / G: R$ 1.087,50 / GG: R$ 1.212,50
+- Vitrificação — P: R$ 1.500,00 / M: R$ 1.625,00 / G: R$ 1.750,00 / GG: R$ 1.835,00
 
 **Proteção da Pintura**
-- Cera Líquida (Fusso Speed & Barrier Quick Detail): R$ 30,00
-- Cera em Pasta (Soft99 Fusso Coat Light): R$ 60,00
+- Cera Líquida: R$ 30,00
+- Cera Pasta: R$ 60,00
 
 **Outros Serviços**
-- Higienização Interna (Tecido): R$ 450,00
-- Higienização Interna (Couro): R$ 350,00
-- Higienização Técnica de Motor: R$ 250,00
-- Higienização Técnica de Chassi: R$ 250,00
-- Revitalização Técnica dos Plásticos: R$ 50,00
-- Vitrificação Técnica dos Plásticos: R$ 250,00
-- Descontaminação da Pintura com Clay Bar: R$ 100,00
+- Descontaminação / Cristalização Vidro: R$ 183,75
+- Descontaminação Pintura Clay Bar: R$ 121,25
+- Higienização Completa – Cabine e Salão: R$ 700,00
+- Higienização Interna – Couro: R$ 433,75
+- Higienização Interna – Tecido: R$ 558,75
+- Higienização Técnica de Chassi: R$ 308,75
+- Higienização Técnica de Motor: R$ 246,25
+- Higienização Teto: R$ 183,75
+- Mão de Obra Especializada: R$ 119,00
+- Remoção, Limpeza e Revedação da Tampa Lateral do Motor: R$ 300,00
+- Restauração de Farol: R$ 496,25
+- Revitalização Técnica dos Plásticos: R$ 58,75
+- Scanner Automotivo: R$ 50,00
+- Vitrificação Técnica dos Plásticos: R$ 308,75
 
-*Valores de Higienização Interna confirmados pelo Rodrigo em 23/07/2026. Atenção: o PDF `dados/midia-bruta/conteudo-diario/tabela_servicos_prestige.pdf` tem esses dois valores invertidos (erro conhecido no material) — usar sempre os valores daqui, não os do PDF.*
+*Tabela anterior tinha "Polimento Comercial" (P/M/G: R$ 350/450/550) e faixas só até G (sem GG). O novo repasse do Erick não menciona Polimento Comercial nem confirma se ele saiu de linha — checar com ele antes de remover de materiais que já usam esse serviço.*
 
 *Preços válidos pra unidade de Brasília-DF — confirmar com Erick antes de reutilizar em campanhas, caso o tempo tenha passado.*
 
