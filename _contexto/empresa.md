@@ -25,19 +25,21 @@
 
 *(Repassada pelo Erick via WhatsApp em 21/08/2026 — substitui a tabela anterior de 22/07/2026. Usar como referência pra artes, posts e materiais de preço)*
 
+*Nota do Erick: ele sempre oferece 20% de desconto ao cliente na hora da venda, sem precisar ser pedido — é prática comercial da casa, aplicada presencialmente por ele. Os valores abaixo são o preço de tabela; **não embutir esse desconto em materiais, posts ou no catálogo** — o desconto é dado por ele no fechamento, não faz parte do preço público.*
+
 **Prestige Wash**
 - P: R$ 70,00
 - M: R$ 90,00
 - G: R$ 110,00
 - GG: R$ 130,00
 
-**Serviços Especiais**
-- Polimento Técnico — P: R$ 837,00 / M: R$ 962,50 / G: R$ 1.087,50 / GG: R$ 1.212,50
-- Vitrificação — P: R$ 1.500,00 / M: R$ 1.625,00 / G: R$ 1.750,00 / GG: R$ 1.835,00
-
 **Proteção da Pintura**
 - Cera Líquida: R$ 30,00
 - Cera Pasta: R$ 60,00
+
+**Serviços Especiais**
+- Polimento Técnico — P: R$ 837,00 / M: R$ 962,50 / G: R$ 1.087,50 / GG: R$ 1.212,50
+- Vitrificação — P: R$ 1.500,00 / M: R$ 1.625,00 / G: R$ 1.750,00 / GG: R$ 1.835,00
 
 **Outros Serviços**
 - Descontaminação / Cristalização Vidro: R$ 183,75
@@ -55,7 +57,7 @@
 - Scanner Automotivo: R$ 50,00
 - Vitrificação Técnica dos Plásticos: R$ 308,75
 
-*Tabela anterior tinha "Polimento Comercial" (P/M/G: R$ 350/450/550) e faixas só até G (sem GG). O novo repasse do Erick não menciona Polimento Comercial nem confirma se ele saiu de linha — checar com ele antes de remover de materiais que já usam esse serviço.*
+**Polimento Comercial saiu de linha** (confirmado pelo Erick em 21/08/2026) — foi absorvido pelo Polimento Técnico, porque os clientes confundiam a diferença entre os dois. Não usar mais esse nome em nenhum material novo; materiais antigos que mencionem "Polimento Comercial" devem ser atualizados para "Polimento Técnico".
 
 *Preços válidos pra unidade de Brasília-DF — confirmar com Erick antes de reutilizar em campanhas, caso o tempo tenha passado.*
 
