@@ -64,7 +64,7 @@
 
 ## Marketing e tráfego pago
 
-- Tráfego pago começou em agosto/2026 com orçamento de R$100/dia, com meta de crescer pra uma média de R$350-500/dia conforme os resultados aparecerem.
-- Campanhas rodadas pelo Levi Moura: "Reconhecimento" (alcance, custo baixíssimo, menos de R$2 a cada mil pessoas) e engajamento pro Instagram (~R$0,10 por visita). Campanha de WhatsApp foi testada e pausada — precisa de alguém disponível pra atender na hora ou IA de apoio, sempre com humano acompanhando.
+- Tráfego pago começou em agosto/2026 com orçamento de R$100/dia, com meta de crescer pra uma média de R$350-500/dia conforme os resultados aparecerem. Histórico detalhado de métricas e sugestões da Meta consolidado no banco de dados em [metricas.md](file:///Volumes/RB/2026/Prestige%20auto%20spa/ClaudePrestige/campanhas/marketing-digital/metricas.md).
+- Campanhas rodadas pelo Levi Moura (atualizado em 16/08/2026, dados acumulados de 5 dias desde o reinício em 10/08): "Reconhecimento" (70.196 pessoas alcançadas com CPM de R$ 1,98) e "Engajamento Instagram" (23.482 pessoas alcançadas, 1.287 visitas ao perfil com custo de R$ 0,22/visita e conversão média de 19% em seguidores). Campanha de WhatsApp pausada por enquanto.
 - **Resposta imediata ao lead é tratada como prioridade máxima** pelo Erick — é o que decide se o clique em tráfego pago vira agendamento ou não.
 - Cadastro de cliente (CRM/Sellflux) em padronização: Nome + Sobrenome + Modelo do carro + 4 últimos dígitos da placa (evita duplicidade tipo "João - Gol Branco" e não expõe a placa completa).
