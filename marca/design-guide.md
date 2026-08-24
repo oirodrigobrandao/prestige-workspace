@@ -76,7 +76,7 @@ Moderno, angular e premium — estética automotiva/tech. Fundo predominantement
 ## Logo
 
 - **Arquivo (fundo claro, preto):** `marca/PNG/Prestige Auto Spa-01.png` (horizontal) / `Prestige Auto Spa-02.png` (empilhado)
-- **Versão pra fundo escuro (branco):** `marca/PNG/Prestige Auto Spa-05.png` (horizontal) / `Prestige Auto Spa-06.png`, `07.png` (variações sobre fundo dourado)
+- **Versão pra fundo escuro (branco):** `marca/PNG/Prestige Auto Spa-06.png` (horizontal, confirmado por checagem de pixel em 24/08/2026) / `07.png` (variações sobre fundo dourado). **Atenção:** `Prestige Auto Spa-05.png` apesar do nome sugerir "fundo escuro", na prática tem as letras pretas (igual ao -01) — não usar em fundo escuro/dourado, fica ilegível. Confirmar visualmente antes de usar qualquer arquivo de logo novo.
 - **Monograma / ícone:** `marca/PNG/Prestige Auto Spa-10.png` (letra "P" dourada, isolada)
 - **Onde usar:** slide final do carrossel (CTA), header de propostas, slides de apresentação, materiais pra parceiros
 - **Tamanho sugerido:** largura entre 120-200px nos HTMLs
