@@ -269,21 +269,283 @@ section{padding:112px 0;position:relative}
 @media(min-width:760px){.testimonial-card{grid-template-columns:1fr auto;align-items:center}}
 
 /* ============ GALLERY ============ */
-.gallery{background:var(--panel)}
-.carousel-outer{position:relative}
-.carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--line-accent) transparent}
-.carousel::-webkit-scrollbar{height:6px}
-.carousel::-webkit-scrollbar-thumb{background:var(--line-accent)}
-.carousel-slide{position:relative;flex:none;width:190px;aspect-ratio:9/16;scroll-snap-align:start;overflow:hidden;border:1px solid var(--line);background:var(--canvas)}
-.carousel-slide img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
-.carousel-slide:hover img{transform:scale(1.05)}
-.carousel-slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(0deg,rgba(8,7,6,.85),transparent);font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:#f0ede4}
-.carousel-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;background:rgba(10,9,7,.72);border:1px solid var(--line-accent);color:var(--text-primary);align-items:center;justify-content:center;font-size:1.4rem;z-index:2;transition:background .3s var(--ease),color .3s var(--ease);display:none}
-.carousel-nav:hover{background:var(--accent);color:#161207}
+.gallery{background:var(--panel);overflow:hidden;position:relative}
+.carousel-outer{position:relative;margin-top:12px}
+.carousel{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  scroll-behavior:auto;
+  padding-bottom:12px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  user-select:none;
+  cursor:grab;
+}
+.carousel:active{cursor:grabbing}
+.carousel::-webkit-scrollbar{display:none}
+.carousel-slide{
+  position:relative;
+  flex:none;
+  width:190px;
+  aspect-ratio:9/16;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:var(--canvas);
+  cursor:pointer;
+  transition:border-color .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease);
+  margin:0;
+}
+.carousel-slide:hover,
+.carousel-slide:focus-visible{
+  border-color:var(--line-accent);
+  transform:translateY(-4px);
+  box-shadow:0 14px 32px rgba(0,0,0,.5);
+}
+.carousel-slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s var(--ease);
+  pointer-events:none;
+}
+.carousel-slide:hover img{
+  transform:scale(1.06);
+}
+.slide-overlay{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at center, rgba(204,153,51,.15) 0%, rgba(8,7,6,.4) 100%);
+  opacity:0;
+  transition:opacity .35s var(--ease);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+}
+.slide-zoom-icon{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:rgba(13,12,10,.85);
+  border:1px solid var(--accent);
+  color:var(--accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform:scale(.75);
+  transition:transform .3s var(--ease);
+  box-shadow:0 4px 16px rgba(0,0,0,.6);
+}
+.carousel-slide:hover .slide-overlay,
+.carousel-slide:focus-visible .slide-overlay{
+  opacity:1;
+}
+.carousel-slide:hover .slide-zoom-icon{
+  transform:scale(1);
+}
+.carousel-slide figcaption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:14px 14px;
+  background:linear-gradient(0deg,rgba(8,7,6,.92) 0%,rgba(8,7,6,.6) 65%,transparent 100%);
+  font-family:'JetBrains Mono',monospace;
+  font-size:.68rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:#f0ede4;
+  pointer-events:none;
+}
+.carousel-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;
+  height:44px;
+  background:rgba(10,9,7,.85);
+  border:1px solid var(--line-accent);
+  color:var(--text-primary);
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+  z-index:2;
+  transition:background .3s var(--ease),color .3s var(--ease),transform .3s var(--ease);
+  display:none;
+}
+.carousel-nav:hover{
+  background:var(--accent);
+  color:#161207;
+}
 .carousel-nav.prev{left:6px}
 .carousel-nav.next{right:6px}
 @media(min-width:640px){.carousel-slide{width:225px}}
 @media(min-width:980px){.carousel-slide{width:255px}.carousel-nav{display:flex}}
+
+/* ============ GALLERY LIGHTBOX MODAL ============ */
+.gallery-modal{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .3s var(--ease);
+}
+.gallery-modal.open{
+  opacity:1;
+  pointer-events:auto;
+}
+.gallery-modal[hidden]{
+  display:none;
+}
+.gallery-modal:not([hidden]){
+  display:flex;
+}
+.modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(8,7,6,.92);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+.modal-dialog{
+  position:relative;
+  z-index:2;
+  width:min(1080px, 94vw);
+  max-height:92vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.modal-header{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 4px;
+  gap:12px;
+}
+.modal-info{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+.modal-counter{
+  font-size:.75rem;
+  letter-spacing:.12em;
+  color:var(--accent);
+  padding:4px 10px;
+  background:rgba(204,153,51,.12);
+  border:1px solid var(--line-accent);
+  white-space:nowrap;
+}
+.modal-title{
+  font-family:'Mirano','Sora',sans-serif;
+  font-size:1.05rem;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  color:var(--text-primary);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.modal-close{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(23,21,15,.8);
+  border:1px solid var(--line-accent);
+  color:var(--text-primary);
+  transition:background .25s var(--ease),color .25s var(--ease),transform .25s var(--ease);
+  flex-shrink:0;
+}
+.modal-close:hover{
+  background:var(--accent);
+  color:#161207;
+  transform:scale(1.05);
+}
+.modal-body{
+  position:relative;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:300px;
+  max-height:calc(82vh - 90px);
+}
+.modal-image-wrapper{
+  position:relative;
+  max-width:100%;
+  max-height:calc(82vh - 90px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--line);
+  background:#050504;
+  box-shadow:0 24px 60px rgba(0,0,0,.8);
+  overflow:hidden;
+}
+.modal-image-wrapper img{
+  max-width:100%;
+  max-height:calc(82vh - 90px);
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  transition:opacity .25s ease,transform .25s ease;
+}
+.modal-image-wrapper img.fade{
+  opacity:0;
+  transform:scale(.98);
+}
+.modal-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:48px;
+  height:48px;
+  background:rgba(10,9,7,.85);
+  border:1px solid var(--line-accent);
+  color:var(--text-primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.8rem;
+  z-index:4;
+  transition:background .25s var(--ease),color .25s var(--ease),transform .25s var(--ease);
+}
+.modal-nav:hover{
+  background:var(--accent);
+  color:#161207;
+}
+.modal-nav.prev{left:10px}
+.modal-nav.next{right:10px}
+@media(max-width:640px){
+  .modal-nav{
+    width:40px;
+    height:40px;
+    font-size:1.4rem;
+  }
+  .modal-nav.prev{left:4px}
+  .modal-nav.next{right:4px}
+  .modal-title{font-size:.85rem}
+}
+.modal-footer{
+  width:100%;
+  padding:12px 4px 4px;
+  text-align:center;
+}
+.modal-caption{
+  font-size:.78rem;
+  color:var(--text-secondary);
+  letter-spacing:.04em;
+}
 
 /* ============ FAQ ============ */
 .faq-list{max-width:760px}
@@ -647,25 +909,156 @@ html.reduced .hero-bg{transform:scale(1) !important}
       <div class="section-head reveal">
         <p class="eyebrow">Dia da inauguração</p>
         <h2>Bastidores<br>da Prestige</h2>
-        <p>Como começou, em 2025. Arrasta pro lado pra ver mais.</p>
+        <p>Como começou, em 2025. Clique em qualquer foto para ampliar.</p>
       </div>
     </div>
     <div class="container">
       <div class="carousel-outer reveal">
         <button class="carousel-nav prev" aria-label="Foto anterior">‹</button>
-        <div class="carousel" id="inaugCarousel">
-          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-06.jpg" alt="Sócios da Prestige Auto Spa no dia da inauguração" loading="lazy"><figcaption>Os sócios</figcaption></figure>
-          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-07.jpg" alt="Equipe da Prestige Auto Spa em frente ao prédio" loading="lazy"><figcaption>Equipe completa</figcaption></figure>
-          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-01.jpg" alt="Discurso de abertura da inauguração" loading="lazy"><figcaption>Discurso de abertura</figcaption></figure>
-          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-02.jpg" alt="Chegada de convidados na inauguração" loading="lazy"><figcaption>Chegada dos convidados</figcaption></figure>
-          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-03.jpg" alt="Camisa Prestige Auto Spa Taguatinga" loading="lazy"><figcaption>Prestige Auto Spa</figcaption></figure>
-          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-04.jpg" alt="Primeiro carro atendido na Prestige" loading="lazy"><figcaption>O primeiro carro</figcaption></figure>
-          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-05.jpg" alt="Discurso em frente à Quadra 42, Taguatinga" loading="lazy"><figcaption>Quadra 42, Taguatinga</figcaption></figure>
+        <div class="carousel" id="inaugCarousel" tabindex="0" aria-label="Carrossel de fotos da inauguração">
+          <!-- Slide 01 -->
+          <figure class="carousel-slide" data-index="0" role="button" tabindex="0" aria-label="Ampliar foto: Os sócios">
+            <img src="assets/img/inauguracao/inaug-06.jpg" alt="Sócios da Prestige Auto Spa no dia da inauguração" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Os sócios</figcaption>
+          </figure>
+          <!-- Slide 02 -->
+          <figure class="carousel-slide" data-index="1" role="button" tabindex="0" aria-label="Ampliar foto: Equipe completa">
+            <img src="assets/img/inauguracao/inaug-07.jpg" alt="Equipe da Prestige Auto Spa em frente ao prédio" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Equipe completa</figcaption>
+          </figure>
+          <!-- Slide 03 -->
+          <figure class="carousel-slide" data-index="2" role="button" tabindex="0" aria-label="Ampliar foto: Discurso de abertura">
+            <img src="assets/img/inauguracao/inaug-01.jpg" alt="Discurso de abertura da inauguração" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Discurso de abertura</figcaption>
+          </figure>
+          <!-- Slide 04 -->
+          <figure class="carousel-slide" data-index="3" role="button" tabindex="0" aria-label="Ampliar foto: Estrutura e espaço">
+            <img src="assets/img/inauguracao/inaug-09.jpg" alt="Apresentação da estrutura e fachada da Prestige Auto Spa" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Estrutura e espaço</figcaption>
+          </figure>
+          <!-- Slide 05 -->
+          <figure class="carousel-slide" data-index="4" role="button" tabindex="0" aria-label="Ampliar foto: Chegada dos convidados">
+            <img src="assets/img/inauguracao/inaug-02.jpg" alt="Chegada de convidados na inauguração" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Chegada dos convidados</figcaption>
+          </figure>
+          <!-- Slide 06 -->
+          <figure class="carousel-slide" data-index="5" role="button" tabindex="0" aria-label="Ampliar foto: Recepção e clientes">
+            <img src="assets/img/inauguracao/inaug-08.jpg" alt="Sócios e clientes conversando no portão da Prestige Auto Spa" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Recepção e clientes</figcaption>
+          </figure>
+          <!-- Slide 07 -->
+          <figure class="carousel-slide" data-index="6" role="button" tabindex="0" aria-label="Ampliar foto: Música & celebração">
+            <img src="assets/img/inauguracao/inaug-10.jpg" alt="DJ animando o evento de inauguração na área externa" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Música & celebração</figcaption>
+          </figure>
+          <!-- Slide 08 -->
+          <figure class="carousel-slide" data-index="7" role="button" tabindex="0" aria-label="Ampliar foto: Camisa oficial">
+            <img src="assets/img/inauguracao/inaug-03.jpg" alt="Camisa Prestige Auto Spa Taguatinga" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Camisa oficial</figcaption>
+          </figure>
+          <!-- Slide 09 -->
+          <figure class="carousel-slide" data-index="8" role="button" tabindex="0" aria-label="Ampliar foto: O primeiro carro">
+            <img src="assets/img/inauguracao/inaug-04.jpg" alt="Primeiro carro atendido na Prestige" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>O primeiro carro</figcaption>
+          </figure>
+          <!-- Slide 10 -->
+          <figure class="carousel-slide" data-index="9" role="button" tabindex="0" aria-label="Ampliar foto: Quadra 42, Taguatinga">
+            <img src="assets/img/inauguracao/inaug-05.jpg" alt="Discurso em frente à Quadra 42, Taguatinga" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Quadra 42, Taguatinga</figcaption>
+          </figure>
+
+          <!-- DUPLICATED SET (LOOP INFINITO SUAVE) -->
+          <figure class="carousel-slide" data-index="0" role="button" tabindex="0" aria-label="Ampliar foto: Os sócios" aria-hidden="true">
+            <img src="assets/img/inauguracao/inaug-06.jpg" alt="Sócios da Prestige Auto Spa no dia da inauguração" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Os sócios</figcaption>
+          </figure>
+          <figure class="carousel-slide" data-index="1" role="button" tabindex="0" aria-label="Ampliar foto: Equipe completa" aria-hidden="true">
+            <img src="assets/img/inauguracao/inaug-07.jpg" alt="Equipe da Prestige Auto Spa em frente ao prédio" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Equipe completa</figcaption>
+          </figure>
+          <figure class="carousel-slide" data-index="2" role="button" tabindex="0" aria-label="Ampliar foto: Discurso de abertura" aria-hidden="true">
+            <img src="assets/img/inauguracao/inaug-01.jpg" alt="Discurso de abertura da inauguração" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Discurso de abertura</figcaption>
+          </figure>
+          <figure class="carousel-slide" data-index="3" role="button" tabindex="0" aria-label="Ampliar foto: Estrutura e espaço" aria-hidden="true">
+            <img src="assets/img/inauguracao/inaug-09.jpg" alt="Apresentação da estrutura e fachada da Prestige Auto Spa" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Estrutura e espaço</figcaption>
+          </figure>
+          <figure class="carousel-slide" data-index="4" role="button" tabindex="0" aria-label="Ampliar foto: Chegada dos convidados" aria-hidden="true">
+            <img src="assets/img/inauguracao/inaug-02.jpg" alt="Chegada de convidados na inauguração" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Chegada dos convidados</figcaption>
+          </figure>
+          <figure class="carousel-slide" data-index="5" role="button" tabindex="0" aria-label="Ampliar foto: Recepção e clientes" aria-hidden="true">
+            <img src="assets/img/inauguracao/inaug-08.jpg" alt="Sócios e clientes conversando no portão da Prestige Auto Spa" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Recepção e clientes</figcaption>
+          </figure>
+          <figure class="carousel-slide" data-index="6" role="button" tabindex="0" aria-label="Ampliar foto: Música & celebração" aria-hidden="true">
+            <img src="assets/img/inauguracao/inaug-10.jpg" alt="DJ animando o evento de inauguração na área externa" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Música & celebração</figcaption>
+          </figure>
+          <figure class="carousel-slide" data-index="7" role="button" tabindex="0" aria-label="Ampliar foto: Camisa oficial" aria-hidden="true">
+            <img src="assets/img/inauguracao/inaug-03.jpg" alt="Camisa Prestige Auto Spa Taguatinga" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Camisa oficial</figcaption>
+          </figure>
+          <figure class="carousel-slide" data-index="8" role="button" tabindex="0" aria-label="Ampliar foto: O primeiro carro" aria-hidden="true">
+            <img src="assets/img/inauguracao/inaug-04.jpg" alt="Primeiro carro atendido na Prestige" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>O primeiro carro</figcaption>
+          </figure>
+          <figure class="carousel-slide" data-index="9" role="button" tabindex="0" aria-label="Ampliar foto: Quadra 42, Taguatinga" aria-hidden="true">
+            <img src="assets/img/inauguracao/inaug-05.jpg" alt="Discurso em frente à Quadra 42, Taguatinga" loading="lazy">
+            <div class="slide-overlay"><span class="slide-zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span></div>
+            <figcaption>Quadra 42, Taguatinga</figcaption>
+          </figure>
         </div>
         <button class="carousel-nav next" aria-label="Próxima foto">›</button>
       </div>
     </div>
   </section>
+
+  <!-- Modal Lightbox da Galeria -->
+  <div class="gallery-modal" id="galleryModal" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-dialog">
+      <header class="modal-header">
+        <div class="modal-info">
+          <span class="modal-counter mono" id="modalCounter">01 / 10</span>
+          <span class="modal-title" id="modalTitle">Os sócios</span>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Fechar visualizador (Esc)">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </header>
+      <div class="modal-body">
+        <button class="modal-nav prev" id="modalPrev" aria-label="Foto anterior (Seta esquerda)">‹</button>
+        <div class="modal-image-wrapper">
+          <img id="modalImg" src="" alt="">
+        </div>
+        <button class="modal-nav next" id="modalNext" aria-label="Próxima foto (Seta direita)">›</button>
+      </div>
+      <footer class="modal-footer">
+        <p class="modal-caption mono" id="modalCaption"></p>
+      </footer>
+    </div>
+  </div>
 
   <section class="faq">
     <div class="container">
@@ -725,7 +1118,7 @@ html.reduced .hero-bg{transform:scale(1) !important}
         </div>
       </div>
       <div class="map-frame reveal" aria-label="Mapa com a localização da Prestige Auto Spa">
-        <iframe src="https://maps.google.com/maps?q=St.%20M%20Norte%20QNM%2042%20Area%20Especial%208%20Taguatinga%20DF&z=16&output=embed" loading="lazy" title="Mapa da Prestige Auto Spa em Taguatinga-DF"></iframe>
+        <iframe src="https://maps.google.com/maps?q=-15.7950364,-48.1099173&z=17&output=embed" loading="lazy" title="Mapa da Prestige Auto Spa em Taguatinga-DF"></iframe>
       </div>
     </div>
   </section>
@@ -835,17 +1228,284 @@ html.reduced .hero-bg{transform:scale(1) !important}
   }
   mql.addEventListener('change', function(m){ if (m.matches) setProgress(1); });
 
-  // inauguration photo carousel
+  // inauguration photo carousel & lightbox modal
+  var galleryData = [
+    {
+      src: 'assets/img/inauguracao/inaug-06.jpg',
+      title: 'Os Sócios',
+      alt: 'Sócios da Prestige Auto Spa no dia da inauguração',
+      caption: 'Sócios da Prestige Auto Spa no evento de inauguração da unidade Taguatinga'
+    },
+    {
+      src: 'assets/img/inauguracao/inaug-07.jpg',
+      title: 'Equipe Completa',
+      alt: 'Equipe da Prestige Auto Spa em frente ao prédio',
+      caption: 'Equipe da Prestige Auto Spa reunida em frente ao prédio na QNM 42'
+    },
+    {
+      src: 'assets/img/inauguracao/inaug-01.jpg',
+      title: 'Discurso de Abertura',
+      alt: 'Discurso de abertura da inauguração',
+      caption: 'Momento de fala e abertura oficial da Prestige Auto Spa'
+    },
+    {
+      src: 'assets/img/inauguracao/inaug-09.jpg',
+      title: 'Estrutura & Fachada',
+      alt: 'Apresentação da estrutura e fachada da Prestige Auto Spa',
+      caption: 'Apresentação da ampla estrutura de SPA automotivo e oficina mecânica'
+    },
+    {
+      src: 'assets/img/inauguracao/inaug-02.jpg',
+      title: 'Chegada dos Convidados',
+      alt: 'Chegada de convidados na inauguração',
+      caption: 'Recepção e chegada dos primeiros convidados e parceiros'
+    },
+    {
+      src: 'assets/img/inauguracao/inaug-08.jpg',
+      title: 'Recepção & Clientes',
+      alt: 'Sócios e clientes conversando no portão da Prestige Auto Spa',
+      caption: 'Atendimento consultivo e bate-papo com clientes na entrada'
+    },
+    {
+      src: 'assets/img/inauguracao/inaug-10.jpg',
+      title: 'Música & Celebração',
+      alt: 'DJ animando o evento de inauguração na área externa',
+      caption: 'DJ animando o dia da grande inauguração da Prestige'
+    },
+    {
+      src: 'assets/img/inauguracao/inaug-03.jpg',
+      title: 'Prestige Auto Spa',
+      alt: 'Camisa oficial Prestige Auto Spa Taguatinga',
+      caption: 'Detalhes da identidade e uniforme oficial da equipe'
+    },
+    {
+      src: 'assets/img/inauguracao/inaug-04.jpg',
+      title: 'O Primeiro Carro',
+      alt: 'Primeiro carro atendido na Prestige',
+      caption: 'O primeiro veículo atendido nos boxes da Prestige Auto Spa'
+    },
+    {
+      src: 'assets/img/inauguracao/inaug-05.jpg',
+      title: 'Quadra 42, Taguatinga',
+      alt: 'Discurso em frente à Quadra 42, Taguatinga',
+      caption: 'Palavra oficial na Área Especial 8, QNM 42 — Taguatinga Norte'
+    }
+  ];
+
   var carousel = document.getElementById('inaugCarousel');
+  var modal = document.getElementById('galleryModal');
+  var modalImg = document.getElementById('modalImg');
+  var modalTitle = document.getElementById('modalTitle');
+  var modalCounter = document.getElementById('modalCounter');
+  var modalCaption = document.getElementById('modalCaption');
+  var modalClose = document.getElementById('modalClose');
+  var modalPrev = document.getElementById('modalPrev');
+  var modalNext = document.getElementById('modalNext');
+  var modalBackdrop = document.getElementById('modalBackdrop');
+  var currentModalIndex = 0;
+  var lastActiveElement = null;
+
+  function updateModalContent(animate){
+    var item = galleryData[currentModalIndex];
+    if (!item) return;
+    var counterText = (currentModalIndex + 1 < 10 ? '0' : '') + (currentModalIndex + 1) + ' / ' + (galleryData.length < 10 ? '0' : '') + galleryData.length;
+    if (animate) {
+      modalImg.classList.add('fade');
+      setTimeout(function(){
+        modalImg.src = item.src;
+        modalImg.alt = item.alt;
+        modalTitle.textContent = item.title;
+        modalCounter.textContent = counterText;
+        modalCaption.textContent = item.caption;
+        modalImg.onload = function(){ modalImg.classList.remove('fade'); };
+      }, 140);
+    } else {
+      modalImg.src = item.src;
+      modalImg.alt = item.alt;
+      modalTitle.textContent = item.title;
+      modalCounter.textContent = counterText;
+      modalCaption.textContent = item.caption;
+      modalImg.classList.remove('fade');
+    }
+    var nextIdx = (currentModalIndex + 1) % galleryData.length;
+    var prevIdx = (currentModalIndex - 1 + galleryData.length) % galleryData.length;
+    new Image().src = galleryData[nextIdx].src;
+    new Image().src = galleryData[prevIdx].src;
+  }
+
+  function openModal(index){
+    if (index < 0 || index >= galleryData.length) return;
+    currentModalIndex = index;
+    lastActiveElement = document.activeElement;
+    updateModalContent(false);
+    modal.removeAttribute('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+    requestAnimationFrame(function(){
+      modal.classList.add('open');
+      modalClose.focus();
+    });
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    setTimeout(function(){
+      modal.setAttribute('hidden', '');
+      if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+        lastActiveElement.focus();
+      }
+    }, 300);
+  }
+
+  function showNextModal(){
+    currentModalIndex = (currentModalIndex + 1) % galleryData.length;
+    updateModalContent(true);
+  }
+
+  function showPrevModal(){
+    currentModalIndex = (currentModalIndex - 1 + galleryData.length) % galleryData.length;
+    updateModalContent(true);
+  }
+
+  if (modal) {
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+    modalPrev.addEventListener('click', showPrevModal);
+    modalNext.addEventListener('click', showNextModal);
+
+    window.addEventListener('keydown', function(e){
+      if (!modal.classList.contains('open')) return;
+      if (e.key === 'Escape') { e.preventDefault(); closeModal(); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); showNextModal(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); showPrevModal(); }
+    });
+
+    var touchStartX = 0;
+    modal.addEventListener('touchstart', function(e){
+      touchStartX = e.changedTouches[0].screenX;
+    }, {passive:true});
+    modal.addEventListener('touchend', function(e){
+      var touchEndX = e.changedTouches[0].screenX;
+      var diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 45) {
+        if (diff > 0) showNextModal();
+        else showPrevModal();
+      }
+    }, {passive:true});
+  }
+
   if (carousel) {
+    carousel.querySelectorAll('.carousel-slide').forEach(function(slide){
+      function handleOpen(e){
+        var idx = parseInt(slide.getAttribute('data-index'), 10);
+        if (!isNaN(idx)) {
+          openModal(idx);
+        }
+      }
+      slide.addEventListener('click', handleOpen);
+      slide.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleOpen(e);
+        }
+      });
+    });
+
+    var isPaused = false;
+    var pauseTimeout = null;
+    var lastFrameTime = null;
+    var SPEED_PX_PER_SEC = 32;
+
+    function pauseAutoplay(durationMs){
+      isPaused = true;
+      if (pauseTimeout) clearTimeout(pauseTimeout);
+      if (durationMs) {
+        pauseTimeout = setTimeout(function(){
+          isPaused = false;
+        }, durationMs);
+      }
+    }
+
+    function resumeAutoplay(){
+      if (pauseTimeout) clearTimeout(pauseTimeout);
+      pauseTimeout = setTimeout(function(){
+        isPaused = false;
+      }, 700);
+    }
+
+    carousel.addEventListener('mouseenter', function(){ isPaused = true; });
+    carousel.addEventListener('mouseleave', function(){ resumeAutoplay(); });
+    carousel.addEventListener('focusin', function(){ isPaused = true; });
+    carousel.addEventListener('focusout', function(){ resumeAutoplay(); });
+
+    var isDragging = false, startX = 0, startScroll = 0;
+    carousel.addEventListener('pointerdown', function(e){
+      isDragging = true;
+      startX = e.pageX - carousel.offsetLeft;
+      startScroll = carousel.scrollLeft;
+      pauseAutoplay();
+    });
+
+    window.addEventListener('pointermove', function(e){
+      if (!isDragging) return;
+      var x = e.pageX - carousel.offsetLeft;
+      var walk = (x - startX);
+      if (Math.abs(walk) > 3) {
+        carousel.scrollLeft = startScroll - walk;
+        handleLoopBoundaries();
+      }
+    });
+
+    function endDrag(){
+      if (isDragging) {
+        isDragging = false;
+        resumeAutoplay();
+      }
+    }
+    window.addEventListener('pointerup', endDrag);
+    window.addEventListener('pointercancel', endDrag);
+
+    function handleLoopBoundaries(){
+      var halfWidth = carousel.scrollWidth / 2;
+      if (halfWidth > 50) {
+        if (carousel.scrollLeft >= halfWidth) {
+          carousel.scrollLeft -= halfWidth;
+        } else if (carousel.scrollLeft <= 0) {
+          carousel.scrollLeft += halfWidth;
+        }
+      }
+    }
+
+    carousel.addEventListener('scroll', function(){
+      handleLoopBoundaries();
+    }, {passive:true});
+
     document.querySelectorAll('.carousel-nav').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        var slide = carousel.querySelector('.carousel-slide');
-        var step = slide.getBoundingClientRect().width + 14;
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        pauseAutoplay(2400);
+        var firstSlide = carousel.querySelector('.carousel-slide');
+        var step = (firstSlide ? firstSlide.getBoundingClientRect().width : 220) + 16;
         var dir = btn.classList.contains('next') ? 1 : -1;
         carousel.scrollBy({ left: dir * step, behavior: mql.matches ? 'auto' : 'smooth' });
       });
     });
+
+    function autoScrollLoop(timestamp){
+      if (!lastFrameTime) lastFrameTime = timestamp;
+      var dt = Math.min(100, timestamp - lastFrameTime) / 1000;
+      lastFrameTime = timestamp;
+
+      var modalIsOpen = modal && modal.classList.contains('open');
+      if (!isPaused && !isDragging && !mql.matches && !document.hidden && !modalIsOpen) {
+        carousel.scrollLeft += SPEED_PX_PER_SEC * dt;
+        handleLoopBoundaries();
+      }
+      requestAnimationFrame(autoScrollLoop);
+    }
+    requestAnimationFrame(autoScrollLoop);
   }
 })();
 </script>
