@@ -84,7 +84,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .site-header{position:fixed;inset:0 0 auto 0;z-index:100;padding:18px 0;transition:background .4s var(--ease),padding .4s var(--ease),border-color .4s var(--ease);border-bottom:1px solid transparent}
 .site-header.scrolled{background:rgba(13,12,10,.86);backdrop-filter:blur(14px);padding:12px 0;border-color:var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand img{height:40px;width:auto}
+.brand img{width:118px;height:auto;display:block}
+@media(min-width:640px){.brand img{width:150px}}
 .nav-links{display:none}
 .nav-links a{font-family:'JetBrains Mono',monospace;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);transition:color .25s var(--ease)}
 .nav-links a:hover{color:var(--accent)}
@@ -276,7 +277,7 @@ section{padding:112px 0;position:relative}
 /* ============ FOOTER ============ */
 footer{background:#0a0908;border-top:1px solid var(--line);padding:64px 0 28px}
 .footer-grid{display:grid;gap:40px}
-.footer-grid img{height:30px;margin-bottom:16px}
+.footer-grid img{width:160px;height:auto;margin-bottom:16px}
 .footer-col h5{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
 .footer-col li{margin-bottom:9px;font-size:.9rem;color:var(--text-secondary)}
 .footer-col a:hover{color:var(--accent)}
@@ -304,7 +305,7 @@ html.reduced .hero-bg{transform:scale(1) !important}
 <header class="site-header" id="siteHeader">
   <div class="container nav-inner">
     <a class="brand" href="#main" aria-label="Prestige Auto Spa">
-      <img src="assets/img/logo-dark.png" alt="Prestige Auto Spa">
+      <img src="assets/img/logo.svg" alt="Prestige Auto Spa">
     </a>
     <nav class="nav-links" aria-label="Navegação principal">
       <a href="#sobre">Sobre</a>
@@ -655,7 +656,7 @@ html.reduced .hero-bg{transform:scale(1) !important}
 <footer>
   <div class="container footer-grid">
     <div>
-      <img src="assets/img/logo-dark.png" alt="Prestige Auto Spa">
+      <img src="assets/img/logo.svg" alt="Prestige Auto Spa">
       <p style="color:var(--text-secondary);font-size:.9rem;max-width:38ch">Centro automotivo 2 em 1 em Taguatinga, Brasília-DF. SPA automotivo e oficina mecânica no mesmo endereço.</p>
     </div>
     <div class="footer-col">
