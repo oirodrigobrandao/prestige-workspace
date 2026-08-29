@@ -214,14 +214,16 @@ section{padding:112px 0;position:relative}
 
 /* ============ PROCESS ============ */
 .process{background:var(--panel)}
-.process-grid{display:grid;gap:40px;position:relative}
-.process-step{position:relative;padding-left:64px}
-.process-step::before{content:attr(data-n);position:absolute;left:0;top:0;width:44px;height:44px;border:1px solid var(--line-accent);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.9rem}
-.process-step h4{font-size:1.05rem;text-transform:none;font-family:'Sora',sans-serif;font-weight:600;margin-bottom:8px}
+.process-grid{display:grid;border:1px solid var(--line)}
+.process-step{padding:34px 30px;border-bottom:1px solid var(--line)}
+.process-step:last-child{border-bottom:none}
+.process-num{display:block;font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:2.2rem;line-height:1}
+.process-step h4{margin-top:18px;font-size:1.05rem;text-transform:none;font-family:'Sora',sans-serif;font-weight:600;margin-bottom:8px}
 .process-step p{color:var(--text-secondary);font-size:.92rem}
 @media(min-width:860px){
   .process-grid{grid-template-columns:repeat(3,1fr)}
-  .process-grid::before{content:"";position:absolute;top:22px;left:calc(16.5% + 4px);right:calc(16.5% + 4px);height:1px;background:var(--line-accent)}
+  .process-step{border-bottom:none;border-right:1px solid var(--line)}
+  .process-step:last-child{border-right:none}
 }
 
 /* ============ WHY ============ */
@@ -268,12 +270,20 @@ section{padding:112px 0;position:relative}
 
 /* ============ GALLERY ============ */
 .gallery{background:var(--panel)}
-.gallery-grid{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
-.gallery-grid figure{position:relative;overflow:hidden;aspect-ratio:4/5}
-.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
-.gallery-grid a:hover img{transform:scale(1.06)}
-.gallery-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(0deg,rgba(8,7,6,.82),transparent);font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#f0ede4}
-@media(min-width:640px){.gallery-grid{grid-template-columns:repeat(4,1fr)}.gallery-grid figure:first-child{grid-column:span 2;grid-row:span 2}}
+.carousel-outer{position:relative}
+.carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--line-accent) transparent}
+.carousel::-webkit-scrollbar{height:6px}
+.carousel::-webkit-scrollbar-thumb{background:var(--line-accent)}
+.carousel-slide{position:relative;flex:none;width:190px;aspect-ratio:9/16;scroll-snap-align:start;overflow:hidden;border:1px solid var(--line);background:var(--canvas)}
+.carousel-slide img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.carousel-slide:hover img{transform:scale(1.05)}
+.carousel-slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(0deg,rgba(8,7,6,.85),transparent);font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:#f0ede4}
+.carousel-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;background:rgba(10,9,7,.72);border:1px solid var(--line-accent);color:var(--text-primary);align-items:center;justify-content:center;font-size:1.4rem;z-index:2;transition:background .3s var(--ease),color .3s var(--ease);display:none}
+.carousel-nav:hover{background:var(--accent);color:#161207}
+.carousel-nav.prev{left:6px}
+.carousel-nav.next{right:6px}
+@media(min-width:640px){.carousel-slide{width:225px}}
+@media(min-width:980px){.carousel-slide{width:255px}.carousel-nav{display:flex}}
 
 /* ============ FAQ ============ */
 .faq-list{max-width:760px}
@@ -515,7 +525,7 @@ html.reduced .hero-bg{transform:scale(1) !important}
       </div>
       <div class="price-grid stagger">
         <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20o%20Prestige%20Wash%20P%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-wash-p.jpg" alt="Prestige Wash sendo aplicado em um BMW" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 70</span><h4>Prestige Wash P</h4><p>Lavagem técnica, porte pequeno.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
-        <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20o%20Prestige%20Wash%20GG%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-wash-gg.jpg" alt="Lavagem técnica em um BMW de porte grande" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 130</span><h4>Prestige Wash GG</h4><p>Lavagem técnica, porte extra grande.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
+        <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20o%20Prestige%20Wash%20GG%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-wash-gg.jpg" alt="Picape de porte grande atendida na Prestige Auto Spa" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 130</span><h4>Prestige Wash GG</h4><p>Lavagem técnica, porte extra grande.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
         <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20a%20Cera%20L%C3%ADquida%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-cera-liquida.jpg" alt="Aplicação de cera líquida em um carro" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 30</span><h4>Cera Líquida</h4><p>Proteção rápida pra pintura.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
         <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20a%20Cera%20em%20Pasta%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-cera-pasta.jpg" alt="Aplicação de cera em pasta em um carro" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 60</span><h4>Cera em Pasta</h4><p>Proteção de maior durabilidade.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
         <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20o%20Polimento%20T%C3%A9cnico%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-polimento.jpg" alt="Polimento técnico com politriz" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 837*</span><h4>Polimento Técnico</h4><p>Varia conforme o porte do veículo.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
@@ -535,15 +545,18 @@ html.reduced .hero-bg{transform:scale(1) !important}
         <h2>Do agendamento<br>à retirada</h2>
       </div>
       <div class="process-grid stagger">
-        <div class="process-step reveal" data-n="01">
+        <div class="process-step reveal">
+          <span class="process-num mono">01</span>
           <h4>Chama no WhatsApp</h4>
           <p>Agenda seu horário e já garante vaga na SPA ou na oficina.</p>
         </div>
-        <div class="process-step reveal" data-n="02">
+        <div class="process-step reveal">
+          <span class="process-num mono">02</span>
           <h4>Deixa com a gente</h4>
           <p>Estética e mecânica no mesmo endereço, sem precisar rodar a cidade.</p>
         </div>
-        <div class="process-step reveal" data-n="03">
+        <div class="process-step reveal">
+          <span class="process-num mono">03</span>
           <h4>Retira no padrão Prestige</h4>
           <p>Carro revisado, limpo no detalhe e com o brilho de novo.</p>
         </div>
@@ -578,7 +591,7 @@ html.reduced .hero-bg{transform:scale(1) !important}
           </div>
         </div>
         <div class="why-media reveal">
-          <img src="assets/img/oficina-lift.jpg" alt="Veículo elevado na área da oficina da Prestige Auto Spa" loading="lazy">
+          <img src="assets/img/fachada.jpg" alt="Fachada da Prestige Auto Spa, com SPA e oficina no mesmo prédio" loading="lazy">
         </div>
       </div>
     </div>
@@ -632,14 +645,24 @@ html.reduced .hero-bg{transform:scale(1) !important}
   <section class="gallery">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow">No dia a dia</p>
+        <p class="eyebrow">Dia da inauguração</p>
         <h2>Bastidores<br>da Prestige</h2>
+        <p>Como começou, em 2025. Arrasta pro lado pra ver mais.</p>
       </div>
-      <div class="gallery-grid">
-        <figure><a href="https://www.instagram.com/prestigeautospaof/" target="_blank" rel="noopener"><img src="assets/img/wash-01.jpg" alt="BMW sendo lavado na Prestige Auto Spa" loading="lazy"><figcaption>Prestige Wash</figcaption></a></figure>
-        <figure><a href="https://www.instagram.com/prestigeautospaof/" target="_blank" rel="noopener"><img src="assets/img/wash-03.jpg" alt="Equipe da Prestige lavando um SUV" loading="lazy"><figcaption>Equipe em ação</figcaption></a></figure>
-        <figure><a href="https://www.instagram.com/prestigeautospaof/" target="_blank" rel="noopener"><img src="assets/img/oficina-lift.jpg" alt="Veículo elevado na área da oficina" loading="lazy"><figcaption>Oficina</figcaption></a></figure>
-        <figure><a href="https://www.instagram.com/prestigeautospaof/" target="_blank" rel="noopener"><img src="assets/img/team-02.jpg" alt="Equipe Prestige Auto Spa" loading="lazy"><figcaption>Nossa equipe</figcaption></a></figure>
+    </div>
+    <div class="container">
+      <div class="carousel-outer reveal">
+        <button class="carousel-nav prev" aria-label="Foto anterior">‹</button>
+        <div class="carousel" id="inaugCarousel">
+          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-06.jpg" alt="Sócios da Prestige Auto Spa no dia da inauguração" loading="lazy"><figcaption>Os sócios</figcaption></figure>
+          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-07.jpg" alt="Equipe da Prestige Auto Spa em frente ao prédio" loading="lazy"><figcaption>Equipe completa</figcaption></figure>
+          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-01.jpg" alt="Discurso de abertura da inauguração" loading="lazy"><figcaption>Discurso de abertura</figcaption></figure>
+          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-02.jpg" alt="Chegada de convidados na inauguração" loading="lazy"><figcaption>Chegada dos convidados</figcaption></figure>
+          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-03.jpg" alt="Camisa Prestige Auto Spa Taguatinga" loading="lazy"><figcaption>Prestige Auto Spa</figcaption></figure>
+          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-04.jpg" alt="Primeiro carro atendido na Prestige" loading="lazy"><figcaption>O primeiro carro</figcaption></figure>
+          <figure class="carousel-slide"><img src="assets/img/inauguracao/inaug-05.jpg" alt="Discurso em frente à Quadra 42, Taguatinga" loading="lazy"><figcaption>Quadra 42, Taguatinga</figcaption></figure>
+        </div>
+        <button class="carousel-nav next" aria-label="Próxima foto">›</button>
       </div>
     </div>
   </section>
@@ -811,6 +834,19 @@ html.reduced .hero-bg{transform:scale(1) !important}
     });
   }
   mql.addEventListener('change', function(m){ if (m.matches) setProgress(1); });
+
+  // inauguration photo carousel
+  var carousel = document.getElementById('inaugCarousel');
+  if (carousel) {
+    document.querySelectorAll('.carousel-nav').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var slide = carousel.querySelector('.carousel-slide');
+        var step = slide.getBoundingClientRect().width + 14;
+        var dir = btn.classList.contains('next') ? 1 : -1;
+        carousel.scrollBy({ left: dir * step, behavior: mql.matches ? 'auto' : 'smooth' });
+      });
+    });
+  }
 })();
 </script>
 </body>
