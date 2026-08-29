@@ -181,6 +181,10 @@ section{padding:112px 0;position:relative}
 .svc-group-head span{color:var(--text-secondary);font-size:.92rem;max-width:36ch}
 .svc-grid{display:grid;gap:1px;background:var(--line)}
 .svc-card{background:var(--panel);padding:30px 26px;display:flex;flex-direction:column;gap:14px;transition:background .3s var(--ease)}
+.svc-card-photo{display:flex;flex-direction:column;padding:0;position:relative;min-height:220px;overflow:hidden}
+.svc-card-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:grayscale(1);transition:transform .6s var(--ease),filter .4s var(--ease)}
+.svc-card-photo:hover img{transform:scale(1.05);filter:grayscale(.4)}
+.svc-card-photo span{position:relative;z-index:1;margin-top:auto;padding:18px 22px;width:100%;background:linear-gradient(0deg,rgba(8,7,6,.92),transparent);font-family:'JetBrains Mono',monospace;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
 .svc-card-media{display:block;margin:-30px -26px 4px;aspect-ratio:16/10;overflow:hidden}
 .svc-card-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
 .svc-card:hover .svc-card-media img{transform:scale(1.05)}
@@ -493,6 +497,10 @@ html.reduced .hero-bg{transform:scale(1) !important}
             <h4>Diagnóstico Eletrônico</h4>
             <p>Scanner automotivo pra encontrar o problema real, não só o sintoma.</p>
           </div>
+          <a class="svc-card svc-card-photo reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20agendar%20um%20servi%C3%A7o%20na%20oficina%20da%20Prestige%20Auto%20Spa." target="_blank" rel="noopener">
+            <img src="assets/img/services/svc-oficina-geral.jpg" alt="Técnico da Prestige revisando freio e suspensão de um carro">
+            <span>Fala com a oficina</span>
+          </a>
         </div>
       </div>
     </div>
