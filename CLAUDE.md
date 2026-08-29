@@ -48,6 +48,7 @@ Evitar: travessão, frases clichê, emoji em excesso (só quando realmente agreg
 
 - [x] Figma
 - [x] Magnific (pode exigir autorização no primeiro uso)
+- [x] Novamira CLI (WordPress prestigeautospa.com.br — inspeção, conteúdo, plugins, WP-CLI via skill `novamira`)
 - [ ] Canva
 - [ ] Gmail
 - [ ] Google Drive

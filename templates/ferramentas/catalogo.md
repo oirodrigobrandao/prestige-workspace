@@ -222,6 +222,25 @@ gh release create v1.0.0
 
 ---
 
+## Gerenciar sites WordPress
+
+### Novamira CLI
+**O que faz:** Conecta o Claude Code direto a um site WordPress (inspeção, conteúdo, plugins, temas, filesystem, PHP, WP-CLI) via REST/OAuth
+**Precisa de conta:** Sim, plugin Novamira instalado no WordPress + autorizacao OAuth pelo navegador
+**Como instalar:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/use-novamira/novamira-cli/main/install.sh | env NOVAMIRA_AGENT='claude-code' sh
+```
+**Como autorizar um site:**
+```bash
+novamira auth login 'https://seusite.com.br/'
+novamira doctor --json
+```
+**Status na Prestige:** Ja instalado e autorizado pra prestigeautospa.com.br. Usar a skill `novamira`
+**Quando usar:** Skills que precisam ler/editar conteudo, plugins ou configuracao do site WordPress da Prestige direto pelo Claude
+
+---
+
 ## Conectar com plataformas (MCPs)
 
 MCPs sao conectores que dao acesso direto a plataformas dentro do Claude Code.
