@@ -1,0 +1,2 @@
+[{"data":{"database":{"id":"66edec51647acd90172d244f","commerceOrder":null,"__typename":"database"},"site":{"commerce":{"id":"66edec51647acd90172d2445","businessAddress":{"country":null,"__typename":"CommerceBusinessAddress"},"defaultCountry":null,"defaultCurrency":"USD","quickCheckoutEnabled":false,"__typename":"SiteCommerce"},"__typename":"site"}}}
+]
