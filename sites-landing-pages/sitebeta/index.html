@@ -126,9 +126,15 @@ body:not(.reduced-motion) .hero-bg{animation:kenburns 26s ease-in-out infinite a
 .hero h1 .w:nth-child(7) span{transition-delay:.54s}
 .hero h1 .w:nth-child(8) span{transition-delay:.62s}
 .hero h1 .w:nth-child(9) span{transition-delay:.7s}
-.hero-sub{margin:26px 0 38px;max-width:46ch;color:#f0ede4;font-size:1.08rem;text-shadow:0 2px 10px rgba(5,5,4,.8);opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease) .6s,transform .8s var(--ease) .6s}
+.hero-sub{margin:26px 0 0;max-width:46ch;color:#f0ede4;font-size:1.08rem;text-shadow:0 2px 10px rgba(5,5,4,.8);opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease) .55s,transform .8s var(--ease) .55s}
 .hero.loaded .hero-sub{opacity:1;transform:translateY(0)}
-.hero-cta{display:flex;flex-wrap:wrap;gap:16px;opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease) .74s,transform .8s var(--ease) .74s}
+.hero-panel{margin:28px 0 30px;padding:22px 24px;background:rgba(9,8,7,.58);backdrop-filter:blur(8px);border:1px solid rgba(244,241,232,.2);max-width:560px;opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease) .68s,transform .8s var(--ease) .68s}
+.hero.loaded .hero-panel{opacity:1;transform:translateY(0)}
+.hero-panel p{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#d8d4c8;margin-bottom:14px}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px}
+.hero-pill{padding:10px 16px;border:1px solid rgba(244,241,232,.32);font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#f4f1e8;transition:background .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease)}
+.hero-pill:hover{background:var(--accent-muted);border-color:var(--accent);color:var(--accent)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease) .84s,transform .8s var(--ease) .84s}
 .hero.loaded .hero-cta{opacity:1;transform:translateY(0)}
 .scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:#eee9dc;opacity:.75;z-index:2}
 .scroll-cue span{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase}
@@ -164,8 +170,6 @@ section{padding:112px 0;position:relative}
 .manifesto-media::after{content:"";position:absolute;left:-14px;top:-14px;width:74px;height:74px;border-top:2px solid var(--accent);border-left:2px solid var(--accent)}
 .manifesto-text p{color:var(--text-secondary);font-size:1.08rem;margin-top:20px;line-height:1.75}
 .manifesto-sign{margin-top:28px;font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
-.team-strip{display:flex;gap:14px;margin-top:32px}
-.team-strip img{width:96px;height:120px;object-fit:cover;filter:grayscale(.15)}
 @media(min-width:860px){.manifesto-grid{grid-template-columns:.85fr 1fr}}
 
 /* ============ SERVICES ============ */
@@ -177,6 +181,9 @@ section{padding:112px 0;position:relative}
 .svc-group-head span{color:var(--text-secondary);font-size:.92rem;max-width:36ch}
 .svc-grid{display:grid;gap:1px;background:var(--line)}
 .svc-card{background:var(--panel);padding:30px 26px;display:flex;flex-direction:column;gap:14px;transition:background .3s var(--ease)}
+.svc-card-media{display:block;margin:-30px -26px 4px;aspect-ratio:16/10;overflow:hidden}
+.svc-card-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.svc-card:hover .svc-card-media img{transform:scale(1.05)}
 .svc-card:hover{background:var(--panel-2)}
 .svc-num{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.85rem}
 .svc-icon{width:42px;height:42px}
@@ -189,10 +196,16 @@ section{padding:112px 0;position:relative}
 /* ============ PRICING ============ */
 .pricing{background:var(--canvas)}
 .price-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
-.price-card{border:1px solid var(--line);padding:26px 22px;position:relative;background:var(--panel)}
-.price-tag{position:absolute;top:0;right:0;background:var(--accent);color:#171205;padding:7px 16px 7px 12px;font-family:'JetBrains Mono',monospace;font-size:.82rem;font-weight:500;clip-path:polygon(14px 0,100% 0,100% 100%,0 100%,0 14px)}
-.price-card h4{margin-top:30px;font-size:1.02rem;text-transform:none;font-weight:600;font-family:'Sora',sans-serif}
+.price-card{display:block;border:1px solid var(--line);padding:26px 22px;position:relative;background:var(--panel);transition:background .3s var(--ease),border-color .3s var(--ease)}
+.price-card:hover{background:var(--panel-2);border-color:var(--line-accent)}
+.price-tag{position:absolute;top:0;right:0;z-index:2;background:var(--accent);color:#171205;padding:7px 16px 7px 12px;font-family:'JetBrains Mono',monospace;font-size:.82rem;font-weight:500;white-space:nowrap;clip-path:polygon(14px 0,100% 0,100% 100%,0 100%,0 14px)}
+.price-card-media{display:block;margin:-26px -22px 16px;aspect-ratio:4/3;overflow:hidden}
+.price-card-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.price-card:hover .price-card-media img{transform:scale(1.05)}
+.price-card h4{margin-top:0;font-size:1.02rem;text-transform:none;font-weight:600;font-family:'Sora',sans-serif}
 .price-card p{color:var(--text-secondary);font-size:.85rem;margin-top:8px}
+.price-cta{display:flex;align-items:center;gap:8px;margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.price-cta img{width:15px;height:15px}
 .price-note{margin-top:34px;color:var(--text-secondary);font-size:.9rem;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
 
 /* ============ PROCESS ============ */
@@ -208,11 +221,17 @@ section{padding:112px 0;position:relative}
 }
 
 /* ============ WHY ============ */
-.why-grid{display:grid;gap:1px;background:var(--line);grid-template-columns:1fr}
-.why-card{background:var(--canvas);padding:32px 28px}
-.why-card h4{font-size:1rem;text-transform:none;font-family:'Sora',sans-serif;font-weight:600;margin-bottom:10px}
-.why-card p{color:var(--text-secondary);font-size:.9rem;line-height:1.6}
-@media(min-width:640px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+.why-wrap{display:grid;gap:20px 56px}
+.why-list{display:flex;flex-direction:column}
+.why-item{display:flex;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}
+.why-item:first-child{padding-top:0}
+.why-icon{width:38px;height:38px;flex:none;margin-top:2px}
+.why-icon img{width:100%;height:100%}
+.why-item h4{font-size:1.05rem;text-transform:none;font-family:'Sora',sans-serif;font-weight:600;margin-bottom:8px}
+.why-item p{color:var(--text-secondary);font-size:.9rem;line-height:1.6}
+.why-media{position:relative;min-height:280px}
+.why-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;border:1px solid var(--line-accent)}
+@media(min-width:860px){.why-wrap{grid-template-columns:1fr 1fr}.why-media{min-height:0}}
 
 /* ============ INTERACTIVE MOMENT ============ */
 .focus-section{background:var(--panel-2);padding:120px 0}
@@ -293,7 +312,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 /* reduced motion */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
-  .hero h1 .w span,.hero-sub,.hero-cta{opacity:1 !important;transform:none !important}
+  .hero h1 .w span,.hero-sub,.hero-panel,.hero-cta{opacity:1 !important;transform:none !important}
   .reveal{opacity:1 !important;transform:none !important}
 }
 html.reduced .hero-bg{transform:scale(1) !important}
@@ -345,9 +364,19 @@ html.reduced .hero-bg{transform:scale(1) !important}
         <span class="w"><span>detalhes.</span></span> <span class="w"><span>Eles</span></span> <span class="w"><span>definem</span></span> <span class="w"><span>o</span></span> <span class="w"><span>padrão.</span></span>
       </h1>
       <p class="hero-sub">SPA automotivo e oficina mecânica no mesmo endereço. A gente trata seu carro do jeito que você trataria, se tivesse o tempo e o olho técnico pra isso.</p>
+      <div class="hero-panel">
+        <p>Direto pro seu serviço</p>
+        <div class="hero-pills">
+          <a class="hero-pill chanfro-sm" href="https://wa.me/5561999616109?text=Oi!%20Quero%20agendar%20o%20Prestige%20Wash%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener">Prestige Wash</a>
+          <a class="hero-pill chanfro-sm" href="https://wa.me/5561999616109?text=Oi!%20Quero%20agendar%20o%20Polimento%20T%C3%A9cnico%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener">Polimento Técnico</a>
+          <a class="hero-pill chanfro-sm" href="https://wa.me/5561999616109?text=Oi!%20Quero%20agendar%20a%20Vitrifica%C3%A7%C3%A3o%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener">Vitrificação</a>
+          <a class="hero-pill chanfro-sm" href="https://wa.me/5561999616109?text=Oi!%20Quero%20agendar%20uma%20revis%C3%A3o%20de%20freios%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener">Freios</a>
+          <a class="hero-pill chanfro-sm" href="https://wa.me/5561999616109?text=Oi!%20Quero%20agendar%20um%20diagn%C3%B3stico%20eletr%C3%B4nico%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener">Diagnóstico Eletrônico</a>
+        </div>
+      </div>
       <div class="hero-cta">
         <a class="btn btn-primary chanfro" href="https://wa.me/5561999616109?text=Oi!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener">Agendar no WhatsApp</a>
-        <a class="btn btn-ghost chanfro" href="#servicos">Ver serviços</a>
+        <a class="btn btn-ghost chanfro" href="#servicos">Ver todos os serviços</a>
       </div>
     </div>
     <div class="scroll-cue" aria-hidden="true">
@@ -376,10 +405,6 @@ html.reduced .hero-bg{transform:scale(1) !important}
         <p>Você já sabe como essa pessoa trata o que conquistou. Não é sobre lavar por lavar. É sobre não deixar passar o parafuso torto, o vidro manchado, o centímetro de verniz que ninguém repara de longe mas que muda tudo de perto.</p>
         <p>Na Prestige a gente trata cada carro assim, do jeito que o dono trataria se tivesse o tempo e o olho técnico pra isso. Cada detalhe recebe o mesmo respeito, porque é isso que separa manutenção de padrão.</p>
         <p class="manifesto-sign">Assinado, equipe Prestige Auto Spa</p>
-        <div class="team-strip" aria-hidden="true">
-          <img src="assets/img/team-01.jpg" alt="" loading="lazy">
-          <img src="assets/img/team-02.jpg" alt="" loading="lazy">
-        </div>
       </div>
     </div>
   </section>
@@ -399,31 +424,37 @@ html.reduced .hero-bg{transform:scale(1) !important}
         </div>
         <div class="svc-grid stagger">
           <div class="svc-card reveal">
+            <span class="svc-card-media"><img src="assets/img/services/svc-prestige-wash.jpg" alt="Lavagem técnica Prestige Wash em um BMW" loading="lazy"></span>
             <span class="svc-num mono">01</span>
             <h4>Prestige Wash</h4>
             <p>Lavagem técnica completa, do porte P ao GG, com produtos selecionados.</p>
           </div>
           <div class="svc-card reveal">
+            <span class="svc-card-media"><img src="assets/img/services/svc-protecao-pintura.jpg" alt="Aplicação de cera de proteção na pintura de um carro" loading="lazy"></span>
             <span class="svc-num mono">02</span>
             <h4>Proteção da Pintura</h4>
             <p>Cera líquida ou em pasta, pra manter o brilho e proteger a lataria.</p>
           </div>
           <div class="svc-card reveal">
+            <span class="svc-card-media"><img src="assets/img/services/svc-polimento.jpg" alt="Polimento técnico com politriz em um carro preto" loading="lazy"></span>
             <span class="svc-num mono">03</span>
             <h4>Polimento Técnico</h4>
             <p>Remoção de marcas e microrriscos, devolvendo a profundidade da pintura.</p>
           </div>
           <div class="svc-card reveal">
+            <span class="svc-card-media"><img src="assets/img/services/svc-vitrificacao.jpg" alt="Aplicação de vitrificação em um carro preto" loading="lazy"></span>
             <span class="svc-num mono">04</span>
             <h4>Vitrificação</h4>
             <p>Camada de proteção de longa duração, com acabamento espelhado.</p>
           </div>
           <div class="svc-card reveal">
+            <span class="svc-card-media"><img src="assets/img/services/svc-higienizacao.jpg" alt="Higienização interna de bancos de couro" loading="lazy"></span>
             <span class="svc-num mono">05</span>
             <h4>Higienização Interna</h4>
             <p>Couro, tecido, teto e chassi, limpos no detalhe que ninguém vê de longe.</p>
           </div>
           <div class="svc-card reveal">
+            <span class="svc-card-media"><img src="assets/img/services/svc-farol.jpg" alt="Restauração de farol em um BMW" loading="lazy"></span>
             <span class="svc-num mono">06</span>
             <h4>Restauração de Faróis</h4>
             <p>Faróis amarelados voltam a ficar transparentes e com boa iluminação.</p>
@@ -475,17 +506,17 @@ html.reduced .hero-bg{transform:scale(1) !important}
         <p>Valores da unidade de Taguatinga-DF. Estética tem tabela fechada; oficina, orçamento personalizado após diagnóstico.</p>
       </div>
       <div class="price-grid stagger">
-        <div class="price-card chanfro-sm reveal"><span class="price-tag chanfro-b mono">R$ 70</span><h4>Prestige Wash P</h4><p>Lavagem técnica, porte pequeno.</p></div>
-        <div class="price-card chanfro-sm reveal"><span class="price-tag chanfro-b mono">R$ 130</span><h4>Prestige Wash GG</h4><p>Lavagem técnica, porte extra grande.</p></div>
-        <div class="price-card chanfro-sm reveal"><span class="price-tag chanfro-b mono">R$ 30</span><h4>Cera Líquida</h4><p>Proteção rápida pra pintura.</p></div>
-        <div class="price-card chanfro-sm reveal"><span class="price-tag chanfro-b mono">R$ 60</span><h4>Cera em Pasta</h4><p>Proteção de maior durabilidade.</p></div>
-        <div class="price-card chanfro-sm reveal"><span class="price-tag chanfro-b mono">a partir de<br>R$ 837</span><h4>Polimento Técnico</h4><p>Varia conforme o porte do veículo.</p></div>
-        <div class="price-card chanfro-sm reveal"><span class="price-tag chanfro-b mono">a partir de<br>R$ 1.500</span><h4>Vitrificação</h4><p>Varia conforme o porte do veículo.</p></div>
-        <div class="price-card chanfro-sm reveal"><span class="price-tag chanfro-b mono">R$ 433</span><h4>Higienização em Couro</h4><p>Limpeza técnica interna completa.</p></div>
-        <div class="price-card chanfro-sm reveal"><span class="price-tag chanfro-b mono">R$ 496</span><h4>Restauração de Farol</h4><p>Por par, com resultado transparente.</p></div>
-        <div class="price-card chanfro-sm reveal"><span class="price-tag chanfro-b mono">R$ 50</span><h4>Scanner Automotivo</h4><p>Diagnóstico eletrônico completo.</p></div>
+        <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20o%20Prestige%20Wash%20P%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-wash-p.jpg" alt="Prestige Wash sendo aplicado em um BMW" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 70</span><h4>Prestige Wash P</h4><p>Lavagem técnica, porte pequeno.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
+        <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20o%20Prestige%20Wash%20GG%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-wash-gg.jpg" alt="Lavagem técnica em um BMW de porte grande" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 130</span><h4>Prestige Wash GG</h4><p>Lavagem técnica, porte extra grande.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
+        <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20a%20Cera%20L%C3%ADquida%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-cera-liquida.jpg" alt="Aplicação de cera líquida em um carro" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 30</span><h4>Cera Líquida</h4><p>Proteção rápida pra pintura.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
+        <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20a%20Cera%20em%20Pasta%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-cera-pasta.jpg" alt="Aplicação de cera em pasta em um carro" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 60</span><h4>Cera em Pasta</h4><p>Proteção de maior durabilidade.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
+        <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20o%20Polimento%20T%C3%A9cnico%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-polimento.jpg" alt="Polimento técnico com politriz" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 837*</span><h4>Polimento Técnico</h4><p>Varia conforme o porte do veículo.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
+        <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20a%20Vitrifica%C3%A7%C3%A3o%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-vitrificacao.jpg" alt="Aplicação de vitrificação em um carro preto" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 1.500*</span><h4>Vitrificação</h4><p>Varia conforme o porte do veículo.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
+        <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20a%20Higieniza%C3%A7%C3%A3o%20em%20Couro%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-higienizacao-couro.jpg" alt="Higienização interna de bancos de couro" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 433</span><h4>Higienização em Couro</h4><p>Limpeza técnica interna completa.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
+        <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20a%20Restaura%C3%A7%C3%A3o%20de%20Farol%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-farol.jpg" alt="Restauração de farol em um BMW" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 496</span><h4>Restauração de Farol</h4><p>Por par, com resultado transparente.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
+        <a class="price-card chanfro-sm reveal" href="https://wa.me/5561999616109?text=Oi!%20Quero%20pedir%20o%20Scanner%20Automotivo%20na%20Prestige%20Auto%20Spa." target="_blank" rel="noopener"><span class="price-card-media"><img src="assets/img/services/price-scanner.jpg" alt="Técnico realizando diagnóstico eletrônico em um veículo" loading="lazy"></span><span class="price-tag chanfro-b mono">R$ 50</span><h4>Scanner Automotivo</h4><p>Diagnóstico eletrônico completo.</p><span class="price-cta"><img src="assets/icons/icon-whatsapp.svg" alt="">Pedir no WhatsApp</span></a>
       </div>
-      <p class="price-note">+ mais de uma dezena de serviços técnicos (cristalização, clay bar, chassi, motor, plásticos e mais). <a class="btn btn-ghost chanfro-sm" href="https://wa.me/5561999616109?text=Oi!%20Quero%20a%20tabela%20completa%20de%20servi%C3%A7os%20da%20Prestige." target="_blank" rel="noopener">Pedir tabela completa</a></p>
+      <p class="price-note">*A partir de, varia conforme o porte do veículo. + mais de uma dezena de serviços técnicos (cristalização, clay bar, chassi, motor, plásticos e mais). <a class="btn btn-ghost chanfro-sm" href="https://wa.me/5561999616109?text=Oi!%20Quero%20a%20tabela%20completa%20de%20servi%C3%A7os%20da%20Prestige." target="_blank" rel="noopener">Pedir tabela completa</a></p>
     </div>
   </section>
 
@@ -519,11 +550,28 @@ html.reduced .hero-bg{transform:scale(1) !important}
         <h2>Excelência com<br>custo-benefício</h2>
         <p>Não somos boutique inacessível, nem lava-rápido de volume. Somos o meio termo que Brasília ainda não tinha.</p>
       </div>
-      <div class="why-grid">
-        <div class="why-card reveal"><h4>Tudo em um endereço</h4><p>SPA automotivo e oficina mecânica juntos, um diferencial raro no DF.</p></div>
-        <div class="why-card reveal"><h4>Atendimento consultivo</h4><p>A gente explica o que o carro precisa de verdade, sem empurrar serviço.</p></div>
-        <div class="why-card reveal"><h4>Processos padronizados</h4><p>O mesmo padrão técnico em todo carro que passa pela Prestige.</p></div>
-        <div class="why-card reveal"><h4>Seu carro como patrimônio</h4><p>Tratamos cada veículo com o cuidado que quem conquistou merece.</p></div>
+      <div class="why-wrap">
+        <div class="why-list stagger">
+          <div class="why-item reveal">
+            <span class="why-icon" aria-hidden="true"><img src="assets/icons/icon-local.svg" alt=""></span>
+            <div><h4>Tudo em um endereço</h4><p>SPA automotivo e oficina mecânica juntos, um diferencial raro no DF.</p></div>
+          </div>
+          <div class="why-item reveal">
+            <span class="why-icon" aria-hidden="true"><img src="assets/icons/icon-whatsapp.svg" alt=""></span>
+            <div><h4>Atendimento consultivo</h4><p>A gente explica o que o carro precisa de verdade, sem empurrar serviço.</p></div>
+          </div>
+          <div class="why-item reveal">
+            <span class="why-icon" aria-hidden="true"><img src="assets/icons/icon-diagnostico.svg" alt=""></span>
+            <div><h4>Processos padronizados</h4><p>O mesmo padrão técnico em todo carro que passa pela Prestige.</p></div>
+          </div>
+          <div class="why-item reveal">
+            <span class="why-icon" aria-hidden="true"><img src="assets/icons/icon-escudo.svg" alt=""></span>
+            <div><h4>Seu carro como patrimônio</h4><p>Tratamos cada veículo com o cuidado que quem conquistou merece.</p></div>
+          </div>
+        </div>
+        <div class="why-media reveal">
+          <img src="assets/img/oficina-lift.jpg" alt="Veículo elevado na área da oficina da Prestige Auto Spa" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
