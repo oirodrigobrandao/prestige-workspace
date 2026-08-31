@@ -5,6 +5,7 @@
 Workspace de marketing e design da Prestige Auto Spa. Rodrigo cuida da estratégia, do design de materiais e do conteúdo remotamente de Maceió-AL, enquanto Erick Bruno toca o marketing presencial na unidade de Brasília-DF.
 
 **Estrutura de pastas:**
+- `AGENTS.md` — mesmas instruções essenciais deste arquivo, em formato cross-tool pra agentes que não leem `CLAUDE.md` nativamente (ex: Antigravity/Gemini). Manter os dois em sintonia quando uma regra de geração de imagem/visual mudar
 - `_contexto/` — memória do sistema (não apagar)
 - `briefings/audios/` — áudios de pedidos recebidos por WhatsApp, pra transcrever e transformar em briefing estruturado
 - `conteudo/redes-sociais/` — posts, legendas e material pro Instagram

@@ -70,6 +70,8 @@ Moderno, angular e premium — estética automotiva/tech. Fundo predominantement
 - Não usar ilustração no lugar de fotografia real nos materiais de serviço/promoção
 - Não exibir logos, nomes ou uniformes de marcas terceiras/concorrentes em fotos ou criativos gerados (usar vestimentas limpas/lisas ou a marcação Prestige)
 - Não usar caixas/botões com cantos 100% retos sem o chanfro em peças de destaque — foge do padrão observado
+- Não deixar nenhum modelo de IA "desenhar" o logo ou o monograma "P" da marca dentro da imagem gerada — IA generativa não reproduz o wordmark com precisão (recriou o "PRESTIGE" numa fonte genérica e separou o "AUTO SPA" do bloco dourado no primeiro teste real, em 31/08/2026). Deixar espaço negativo limpo na composição e sobrepor o arquivo real depois (`marca/PNG/Prestige Auto Spa-06.png` fundo escuro, `-07.png` fundo dourado, `-10.png` monograma isolado)
+- A regra anti-viúva (linha 30) vale também pra títulos gerados por IA, inclusive quando a palavra final é um "reveal"/palavra de efeito em destaque — nunca isolar sozinha numa linha, mesmo com cor diferente
 
 ---
 
