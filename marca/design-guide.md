@@ -37,6 +37,8 @@ Moderno, angular e premium — estética automotiva/tech. Fundo predominantement
 
 > Baseado nos 7 materiais (banners, adesivos, posts) que o Erick já produziu e passou como referência em 23/07/2026 — é o mais próximo de um padrão que a marca tem hoje, mas **ainda não foi oficializado com o Erick**. Tratar como ponto de partida pra propor o padrão do item "Arte padrão de preços/serviços" em `tarefas.md`, não como regra fechada.
 
+**Funcionário em imagem gerada por IA:** priorizar sempre clonar/manter a aparência de um funcionário real (usando como referência as fotos em `sites-landing-pages/imgs-prestige/` ou `dados/midia-bruta/`). Só usar um rosto fictício gerado pela IA quando não for possível clonar a pessoa real com consistência ou quando não existir imagem real dela no banco pra aquela cena/ângulo.
+
 ---
 
 ## Elementos-chave

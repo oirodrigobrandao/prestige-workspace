@@ -19,6 +19,6 @@ Esses dois arquivos são a fonte da verdade. Não duplicar o conteúdo deles aqu
 
 Primeiro teste real de geração via Antigravity (carrossel `2026-09-16-polimento-tecnico-holograma`): fotorrealismo muito bom, mas caiu nos dois pontos acima em 2 dos 6 slides — por isso viraram regra explícita no design-guide, não só recomendação implícita.
 
-## Em aberto — perguntar antes de assumir
+## Funcionário em imagem gerada por IA
 
-Tudo bem gerar "funcionários" com rosto fictício hiper-realista pra ilustrar o serviço, ou a marca prefere manter sempre a equipe real (fotos em `sites-landing-pages/imgs-prestige/`) por autenticidade? Ainda não decidido com o Erick.
+Priorizar sempre clonar/manter a aparência de um funcionário real, usando como referência as fotos em `sites-landing-pages/imgs-prestige/` ou `dados/midia-bruta/`. Só usar um rosto fictício gerado pela IA quando não for possível clonar a pessoa real com consistência ou quando não existir imagem real dela no banco pra aquela cena/ângulo. (Regra definida em 2026-08-31 — ver `marca/design-guide.md`.)
