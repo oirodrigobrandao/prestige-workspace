@@ -62,6 +62,8 @@ Evitar: travessão, frases clichê, emoji em excesso (só quando realmente agreg
 
 Vale pra qualquer material da Prestige (catálogo, post, carrossel, campanha, proposta, etc.), não só um tipo específico de trabalho. Sempre que for gerar uma imagem no Magnific, levar como referência (`references`, `type: image`) pelo menos uma foto real do ambiente/equipe/carro da Prestige — de preferência uma que mostre a marca e as cores da marca (dourado/preto/branco) visíveis na cena. Isso mantém a imagem gerada consistente com o resto do material real e evita que pareça "IA genérica".
 
+**Exceção que não abre mão: posts de prova social/depoimento/caso real nunca usam imagem gerada por IA nem foto de banco de terceiros, em nenhum slide — nem mesmo com referência da marca.** Ver regra completa em `marca/design-guide.md` → "O que NUNCA fazer". Se faltar foto real do caso, avisar o usuário em vez de gerar ou reaproveitar imagem genérica.
+
 ---
 
 ## Contexto do negócio

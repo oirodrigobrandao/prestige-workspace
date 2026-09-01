@@ -66,6 +66,7 @@ Moderno, angular e premium — estética automotiva/tech. Fundo predominantement
 
 ## O que NUNCA fazer
 
+- **Prova social nunca leva imagem de IA nem foto genérica de banco/stock — em nenhum slide, principalmente na capa.** Posts de prova social, depoimento ou "caso real" só podem usar fotos genuinamente reais daquele atendimento específico (do Erick ou do banco de mídia da Prestige em `dados/midia-bruta/`). Não vale gerar via Magnific "parecendo real", não vale reaproveitar imagem de outro post editorial genérico com crop diferente fingindo ser aquele caso, e não vale usar foto de banco de imagens de terceiros que não é da Prestige. Se não existir foto real do caso, **parar e avisar o usuário** pedindo a mídia real — nunca simular a prova. (Confirmado em 01/09/2026 depois de 3 posts — dias 20, 05 e 12/09 — descobertos usando imagem fabricada ou de terceiros em post de prova social.)
 - Não distorcer o wordmark "PRESTIGE" nem separar do bloco "AUTO SPA" sem necessidade
 - Não usar paleta de cores fora de preto/branco/dourado em materiais oficiais
 - Não usar fontes arredondadas ou "amigáveis demais" que destoem do estilo angular da marca
