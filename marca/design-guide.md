@@ -80,6 +80,8 @@ A fotografia deve ser clara/real, enquanto o design gráfico (chanfros, cores pr
 - **Chanfro (corte diagonal no canto):** o elemento mais recorrente da marca. Caixas de texto, listas de serviço, tarjas de preço, botões de contato e QR code sempre têm um canto (geralmente superior-direito ou inferior-direito) cortado na diagonal, formando um paralelogramo/seta em vez de retângulo puro. Esse recorte é o que "amarra" qualquer peça ao visual da marca — usar sempre que possível em blocos de destaque
 - Bordas: retas, sem arredondamento — reforça o caráter técnico/angular da marca e do logo
 - Border-radius dos cards: zero
+- **Não existe "padrão visual B" com cantos arredondados/pills.** Todo carrossel (independente do tom — educativo, institucional, reflexivo) usa o mesmo sistema "Editorial Chanfrado": cantos retos, chanfro nas tarjas/cards, zero border-radius em qualquer bloco de conteúdo. (Corrigido em 05/09/2026: o carrossel de 06/09 tinha sido feito com cards arredondados e tags em pill — fora do design-guide — e precisou ser refeito do zero.)
+- **Contraste de texto sobre foto:** fotos reais/documentais (com luz de dia ou LED de galpão) costumam ficar mais claras que uma foto de estúdio. O overlay escuro (gradiente preto) precisa ter opacidade mínima de ~0.55–0.8 exatamente nas áreas onde cai texto branco — não usar o mesmo gradiente "padrão" sem checar contra a foto real usada. Sempre adicionar um `text-shadow` sutil no `h1` (algo como `0 2px 14px rgba(0,0,0,0.85)`) como reforço de legibilidade, e olhar o PNG renderizado antes de aprovar.
 - Botões / tarjas de contato: bloco branco ou dourado sólido com o chanfro, texto em preto bold (número de telefone sempre em destaque)
 - Listas de serviço: caixas com borda fina dourada (outline, fundo preto) e o mesmo corte diagonal, uma abaixo da outra
 - Selo/badge de serviço: emblema circular (coroa + grinalda/laurel, estilo brasão) usado pra marcar categorias/tiers de serviço (ex: "Prestige Wash Essencial") — dourado e branco sobre fundo escuro
@@ -95,6 +97,7 @@ A fotografia deve ser clara/real, enquanto o design gráfico (chanfros, cores pr
 - **Flyer vertical (impresso):** foto no topo (metade da peça), lista de serviços chanfrada + QR code na parte inferior preta
 - **Adesivo/etiqueta de controle** (ex: troca de óleo): fundo claro (branco/creme), faixa dourada de destaque, campos pra preencher à mão, contato no rodapé
 - **Post Instagram (institucional/marco):** foto dramática do carro, texto de destaque em branco + número grande em dourado com efeito de textura, sem lista de serviços — usado pra marcos da marca (ex: 1.000 seguidores)
+- **Slide final de carrossel (CTA/contato):** foto grande em cima + bloco dourado sólido embaixo com os itens de contato (mensagem, localização, tipo de avaliação) e rodapé (@handle + logo). Dimensionar a altura do bloco dourado pelo conteúdo real (itens + divisor + rodapé, com uma margem curta entre os dois), nunca deixar `justify-content: space-between` esticar um bloco de altura fixa grande — isso cria espaço vazio no meio. Referência de proporção validada: foto ~970px / bloco dourado ~380px numa arte de 1080x1350.
 
 ---
 
