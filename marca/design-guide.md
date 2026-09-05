@@ -33,11 +33,45 @@
 
 ## Estilo geral
 
-Moderno, angular e premium — estética automotiva/tech. Fundo predominantemente preto, com fotografia real de carros e dos serviços sendo executados (nunca ilustração) — muitas vezes com iluminação dramática/alto contraste. Visual limpo, direto, sem poluição visual.
+A identidade visual da Prestige é REAL e MOVIMENTADA. A regra de ouro é **Documentar em vez de Criar**.
+A fotografia deve ser clara/real, enquanto o design gráfico (chanfros, cores preto/dourado, tarjas de texto) será sobreposto a ela.
 
-> Baseado nos 7 materiais (banners, adesivos, posts) que o Erick já produziu e passou como referência em 23/07/2026 — é o mais próximo de um padrão que a marca tem hoje, mas **ainda não foi oficializado com o Erick**. Tratar como ponto de partida pra propor o padrão do item "Arte padrão de preços/serviços" em `tarefas.md`, não como regra fechada.
+**Direção de Arte Fotográfica (JSON obrigatório para Magnific/IA):**
 
-**Funcionário em imagem gerada por IA:** priorizar sempre clonar/manter a aparência de um funcionário real (usando como referência as fotos em `sites-landing-pages/imgs-prestige/` ou `dados/midia-bruta/`). Só usar um rosto fictício gerado pela IA quando não for possível clonar a pessoa real com consistência ou quando não existir imagem real dela no banco pra aquela cena/ângulo.
+```json
+{
+  "estilo_geral": {
+    "tipo": "Fotografia real e documental",
+    "estetica": "Oficina de bairro premium, organizada, movimentada, humana",
+    "iluminacao": "Luz natural de dia nublado ou luz fria de lâmpadas LED de galpão. Fotos 'cruas' sem edição pesada.",
+    "grau_de_perfeicao": "Imperfeito e autêntico. Sujeira, marcas de pneu, água no chão, ferramentas fora do lugar.",
+    "referencias_visuais": "Piso de concreto com faixas amarelas, telhado metálico escuro, portão de aço, estrutura de tijolo cinza, refletores industriais."
+  },
+  "elementos_permitidos": [
+    "Funcionários reais trabalhando (uniformes pretos da Prestige, bonés) de forma natural e espontânea",
+    "Carros reais de clientes (sem brilho extremo de showroom, com poeira ou sujeira de uso diário)",
+    "Ferramentas reais, mangueiras, elevadores hidráulicos, prateleiras com produtos, poltronas de espera",
+    "Chão molhado, espuma de sabão, reflexos reais da luz no piso",
+    "Enquadramentos amadores estilo foto de celular (ângulos levemente tortos, profundidade de campo média, sem simetria perfeita)"
+  ],
+  "elementos_proibidos": [
+    "Cenários de estúdio com fundo infinito preto ou branco",
+    "Iluminação dramática de cinema (neon, alto contraste extremo, sombras profundas demais)",
+    "Carros com pintura 'vitrificada' sintética de IA, sem nenhuma sujeira ou marca de uso real",
+    "Ilustrações, renderizações 3D ou qualquer coisa que pareça gráfico/CGI",
+    "Decorações de inauguração (bolas amarelas e pretas, faixas comemorativas)",
+    "Fundos desfocados de palmeiras, prédios futuristas ou paisagens genéricas de IA",
+    "Pessoas com rostos perfeitos demais ou poses robóticas",
+    "Logos, marcas ou uniformes de concorrentes"
+  ],
+  "regra_de_humanizacao": {
+    "descricao": "Sempre que o post for sobre serviço, oficina ou lava jato, DEVE haver pelo menos um funcionário da Prestige em cena (mãos, braços, rosto) realizando uma tarefa real.",
+    "uso_de_clonagem": "Usar as fotos reais de funcionários (Fernando, Erick, equipe) para clonar a aparência e os traços no Magnific antes de gerar."
+  }
+}
+```
+
+> **Dica para uso de IA (Magnific/Midjourney):** Ao invés de pedir para criar a cena do zero, use uma foto real da oficina (ex: de `dados/midia-bruta/`) como base. Instrua o modelo a usar a foto real como Image Prompt (referência) e pedir para "renderizar em altíssima qualidade mantendo 100% da identidade, removendo decoração de inauguração e adicionando leve granulação de foto de celular". Use a IA apenas para aumentar resolução (upscale) ou estender fundo, preservando a essência da oficina real.
 
 ---
 
