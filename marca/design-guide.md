@@ -28,6 +28,7 @@
 - **Peso do título:** Bold ou SemiBold
 
 - **Regra de diagramação e quebra de linhas (Anti-viúvas):** Nunca permitir uma palavra isolada sozinha em uma linha nos títulos, subtítulos ou chamadas de destaque. Distribuir as palavras de forma equilibrada e organizada através de quebras manuais semânticas (`<br>`), agrupando termos lógicos (ex: 2 a 4 palavras por linha com comprimentos harmônicos). Usar `text-wrap: balance` e espaçamentos não-quebráveis (`&nbsp;`) sempre que apropriado.
+  - **Atenção com colunas estreitas (ex: layout de foto 56%/44% com texto de um lado):** a Mirano Extended é uma fonte larga — em colunas de ~380-450px de largura, títulos com 6+ palavras ou palavras longas ("equipamento", "arranque", "embreagem") frequentemente quebram em palavra isolada mesmo com `text-wrap: balance` ligado (o balance só equilibra o comprimento das linhas, não evita viúva). Sempre **renderizar e olhar o PNG** antes de aprovar um título nessa coluna. Se aparecer palavra isolada: 1) encurtar a frase, 2) mover o título pra um layout de largura cheia (~950px, como o padrão de citação em tela cheia), ou 3) reduzir o font-size — nessa ordem de preferência.
 
 ---
 
@@ -62,7 +63,9 @@ A fotografia deve ser clara/real, enquanto o design gráfico (chanfros, cores pr
     "Decorações de inauguração (bolas amarelas e pretas, faixas comemorativas)",
     "Fundos desfocados de palmeiras, prédios futuristas ou paisagens genéricas de IA",
     "Pessoas com rostos perfeitos demais ou poses robóticas",
-    "Logos, marcas ou uniformes de concorrentes"
+    "Logos, marcas ou uniformes de concorrentes",
+    "Cenário externo com cara de subúrbio americano (gramado aparado, casas de madeira estilo New England, fiação subterrânea) quando o post não é sobre outro país — mesmo em posts sem oficina (ex: carro na rua ao entardecer), o ambiente precisa parecer uma rua brasileira real: fiação aérea emaranhada, muros residenciais simples, asfalto com remendos. (Confirmado em 05/09/2026 no carrossel de 06/09: imagens de carro em rua ficaram com cara de bairro americano)",
+    "Carro exageradamente limpo/intacto num post que não é sobre estética automotiva — mesmo fora da oficina, o carro de rua deve ter poeira e marcas de uso reais, não brilho de carro zero km"
   ],
   "regra_de_humanizacao": {
     "descricao": "Sempre que o post for sobre serviço, oficina ou lava jato, DEVE haver pelo menos um funcionário da Prestige em cena (mãos, braços, rosto) realizando uma tarefa real.",
