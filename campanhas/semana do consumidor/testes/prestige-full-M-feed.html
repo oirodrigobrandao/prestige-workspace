@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Prestige Full M</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1350px; font-family:'Archivo', Arial, sans-serif; background:#fff; overflow:hidden; }
+
+  .topbar { height:16px; width:100%; background:#CC9933; }
+
+  .header { text-align:center; padding:44px 40px 24px; }
+  .header .line1 { font-family:'Anton', Arial, sans-serif; font-size:48px; color:#0a0a0a; letter-spacing:2px; }
+  .header .line2 { font-family:'Anton', Arial, sans-serif; font-size:100px; color:#CC9933; letter-spacing:1px; line-height:0.95; margin-top:-6px; }
+
+  .card { position:relative; margin:10px 36px 0; height:640px; border-radius:32px; overflow:hidden; background:#000; }
+  .card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(0.6) saturate(1.05); }
+  .card .scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.75) 100%); }
+
+  .tag {
+    position:absolute; top:28px; left:28px; z-index:3;
+    background:rgba(10,10,10,0.62); backdrop-filter:blur(2px);
+    padding:18px 26px 20px; border-radius:0 24px 24px 0;
+    border-left:6px solid #CC9933;
+  }
+  .tag .p1 { font-family:'Anton', Arial, sans-serif; color:#CC9933; font-size:34px; letter-spacing:1px; }
+  .tag .p2 { font-family:'Anton', Arial, sans-serif; color:#fff; font-size:76px; line-height:0.9; margin-top:-4px; }
+
+  .goldpanel {
+    position:absolute; top:0; right:0; width:340px; height:100%; z-index:3;
+    background:#CC9933; padding:36px 26px;
+    border-radius:0 32px 0 40px;
+    display:flex; flex-direction:column; justify-content:flex-start;
+  }
+  .goldpanel .lbl { font-family:'Archivo', Arial, sans-serif; font-weight:800; color:#0a0a0a; font-size:27px; line-height:1.15; text-transform:uppercase; margin-top:8px; }
+  .goldpanel .off { font-family:'Anton', Arial, sans-serif; color:#fff; font-size:98px; line-height:0.85; margin-top:210px; }
+
+  .pills { position:absolute; left:28px; top:318px; z-index:3; display:flex; flex-direction:column; gap:10px; }
+  .pill {
+    display:flex; align-items:center; gap:10px;
+    background:rgba(10,10,10,0.72); border:2px solid #CC9933; border-radius:40px;
+    padding:10px 20px 10px 14px; width:340px; white-space:nowrap;
+  }
+  .pill .ico { font-size:22px; width:26px; text-align:center; }
+  .pill .lbl { font-family:'Archivo', Arial, sans-serif; font-weight:700; color:#fff; font-size:18px; text-transform:uppercase; letter-spacing:0.2px; }
+
+  .ribbon {
+    margin:18px 36px 0; height:210px; background:#0a0a0a; position:relative;
+    clip-path: polygon(0 0, 92% 0, 100% 28%, 100% 100%, 0 100%);
+    border-radius:28px;
+    padding:30px 44px;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .ribbon .de { font-family:'Archivo', Arial, sans-serif; color:#CC9933; font-size:26px; text-decoration:line-through; font-weight:700; }
+  .ribbon .por-row { display:flex; align-items:baseline; gap:14px; margin-top:2px; }
+  .ribbon .por-label { font-family:'Archivo', Arial, sans-serif; color:#fff; font-weight:800; font-size:26px; }
+  .ribbon .por-value { font-family:'Anton', Arial, sans-serif; color:#fff; font-size:86px; line-height:0.9; }
+  .ribbon .foot-row { display:flex; justify-content:space-between; align-items:center; margin-top:10px; }
+  .ribbon .valido { font-family:'Archivo', Arial, sans-serif; color:#fff; font-size:19px; font-weight:600; }
+  .ribbon .valido b { color:#CC9933; font-weight:800; }
+  .ribbon .economia { font-family:'Archivo', Arial, sans-serif; color:#22C55E; font-size:22px; font-weight:800; text-transform:uppercase; }
+
+  .footer { display:flex; justify-content:space-between; align-items:center; padding:34px 40px 40px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .brand .word { font-family:'Anton', Arial, sans-serif; font-size:34px; color:#0a0a0a; letter-spacing:1px; }
+  .brand .sub { background:#CC9933; color:#0a0a0a; font-family:'Archivo', Arial, sans-serif; font-weight:800; font-size:14px; padding:5px 10px; border-radius:6px; letter-spacing:0.5px; }
+
+  .cta {
+    background:#22C55E; color:#0a0a0a; font-family:'Archivo', Arial, sans-serif; font-weight:800; font-size:24px;
+    padding:18px 30px 18px 32px; display:flex; align-items:center; gap:14px;
+    clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+  }
+</style>
+</head>
+<body>
+  <div class="topbar"></div>
+  <div class="header">
+    <div class="line1">SEMANA DO</div>
+    <div class="line2">CONSUMIDOR</div>
+  </div>
+
+  <div class="card">
+    <img src="file:///Volumes/RB/2026/Prestige auto spa/ClaudePrestige/dados/midia-bruta/conteudo-diario/jpg_converted/IMG_0400.jpg" />
+    <div class="scrim"></div>
+
+    <div class="tag">
+      <div class="p1">PRESTIGE</div>
+      <div class="p2">FULL</div>
+    </div>
+
+    <div class="goldpanel">
+      <div class="lbl">CUIDADO<br/>COMPLETO<br/>PARA O<br/>SEU CARRO</div>
+      <div class="off">35%<br/>OFF</div>
+    </div>
+
+    <div class="pills">
+      <div class="pill"><span class="ico">🚿</span><span class="lbl">Lavagem completa</span></div>
+      <div class="pill"><span class="ico">🧽</span><span class="lbl">Polimento técnico</span></div>
+      <div class="pill"><span class="ico">✅</span><span class="lbl">Higienização total</span></div>
+      <div class="pill"><span class="ico">💡</span><span class="lbl">Restauração de farol</span></div>
+      <div class="pill"><span class="ico">🔷</span><span class="lbl">Vitrificação</span></div>
+    </div>
+  </div>
+
+  <div class="ribbon">
+    <div class="de">DE R$ 3.542,25</div>
+    <div class="por-row">
+      <span class="por-label">POR</span>
+      <span class="por-value">R$ 2.302,46</span>
+    </div>
+    <div class="foot-row">
+      <span class="valido">VÁLIDO APENAS PARA VEÍCULO DE <b>PORTE M</b></span>
+      <span class="economia">Economia de R$ 1.239,79</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">
+      <span class="word">PRESTIGE</span>
+      <span class="sub">AUTO SPA</span>
+    </div>
+    <div class="cta">AGENDAR AGORA →</div>
+  </div>
+</body>
+</html>

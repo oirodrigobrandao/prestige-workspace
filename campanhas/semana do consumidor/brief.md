@@ -57,7 +57,16 @@ Peças por porte (P/M/G/GG), em duas versões: **Feed** (4:5) e **Stories** (9:1
 - `testes/prestige-full-P-feed-v2.jpg` — mesma geração, variação 2. Bug: o pill "Lavagem completa" aparece duplicado (sozinho no topo e de novo na fileira de baixo). Descartar ou regenerar se preferir esse layout.
 - `testes/prompt-gpt.md` — prompt equivalente pra testar a mesma peça no GPT, pra comparar qualidade/estilo antes de bater o martelo em qual ferramenta usar pros outros 7 criativos restantes (M, G, GG × Feed, Stories).
 
-Próximo passo: você escolhe a versão (ou pede ajuste) e aí replico pro resto do lote.
+### Porte M (novo padrão, a partir da sua peça manual no Figma)
+
+Você desenhou a versão do Porte P direto no Figma (não deu pra puxar o arquivo — Figma pessoal não vinculado à conta conectada, `rodrigo.brandao@housi.com.br`; se quiser que eu edite direto no Figma depois, é só compartilhar o arquivo com esse e-mail). Recriei o mesmo padrão em HTML/CSS com os dados do M, usando uma foto real da Prestige (`dados/midia-bruta/conteudo-diario/jpg_converted/IMG_0400.jpg` — funcionário real + BMW real + placa com a marca) em vez de foto de banco de imagem.
+
+- `testes/prestige-full-M-feed.html` — código-fonte editável (fácil de gerar G e GG só trocando os valores e a porte)
+- `testes/prestige-full-M-feed.png` — render final 1080x1350
+
+⚠️ Nota de marca: o botão de CTA e o texto "Economia de R$..." usam verde, que não é uma das 3 cores oficiais (preto/branco/dourado) do `marca/design-guide.md`. Mantive porque veio da sua peça original — avisa se quiser trocar pra dourado.
+
+Próximo passo: você aprova o padrão do M (ou pede ajuste) e aí eu gero G e GG no mesmo molde, e depois as versões Stories (9:16) dos 4 portes.
 
 ## Próximos passos por fase
 
