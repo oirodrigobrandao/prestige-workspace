@@ -49,6 +49,16 @@ Farol usa sempre R$ 496,25 (Restauração de Farol), porque essa é a única lin
 - `Catalogo- Prestige Auto Spa.pdf` — catálogo de preços oficial (mesmas tabelas coladas nesta conversa)
 - `referencia visual.jpeg` — referência de estilo visual (print InfinitePay)
 
+## Testes de criativo
+
+Peças por porte (P/M/G/GG), em duas versões: **Feed** (4:5) e **Stories** (9:16). Testando um criativo primeiro (porte P, Feed) antes de replicar pros demais.
+
+- `testes/prestige-full-P-feed-v1.jpg` — gerado no Magnific, com foto real da Prestige como referência de marca (box de lavagem real, carro real). Layout limpo: 2 pills acima do carro, 3 pills abaixo, preço e desconto à direita. **Sem bugs.**
+- `testes/prestige-full-P-feed-v2.jpg` — mesma geração, variação 2. Bug: o pill "Lavagem completa" aparece duplicado (sozinho no topo e de novo na fileira de baixo). Descartar ou regenerar se preferir esse layout.
+- `testes/prompt-gpt.md` — prompt equivalente pra testar a mesma peça no GPT, pra comparar qualidade/estilo antes de bater o martelo em qual ferramenta usar pros outros 7 criativos restantes (M, G, GG × Feed, Stories).
+
+Próximo passo: você escolhe a versão (ou pede ajuste) e aí replico pro resto do lote.
+
 ## Próximos passos por fase
 
 1. **Fechar briefing** — resolver o checklist "Pendente" acima (farol, GG dentro ou fora, formato de publicação, datas)
